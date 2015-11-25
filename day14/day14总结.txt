@@ -1,0 +1,106 @@
+1：正则表达式(理解)
+	(1)符合一定规则的字符串。
+	(2)常见操作
+		A:判断功能(String类的方法)
+			public boolean matches(String regex)
+		B:分割功能(String类的方法)
+			public String[] split(String regex)
+		C:替换功能(String类的方法)
+			public String replaceAll(String regex,String replacement)
+		D:获取功能(Pattern和Matcher类的功能)
+			a:Pattern
+				public static Pattern compile(String regex)
+				public Matcher matcher(String s)
+			b:Matcher
+				public boolean find()
+				public String group()
+	(3)案例：(掌握)
+		A:校验手机号码
+		B:校验邮箱
+		C:我有如下一个字符串:”91 27 46 38 50”
+		  请写代码实现最终输出结果是：”27 38 46 50 91”
+		D:获取由三个字符组成的单词
+
+2：Math(理解)
+	(1)用于数学运算的类，还包括一些三角函数。
+	(2)常见功能：
+		public static int abs(int a)
+		public static double ceil(double a)
+		public static double floor(double a)
+		public static int max(int a,int b) min自学
+		public static double pow(double a,double b)
+		public static double random()
+		public static int round(float a) 参数为double的自学
+		public static double sqrt(double a)
+	(3)案例：(掌握)
+		猜数字小游戏
+
+3：Random(理解)
+	(1)Random是用于产生随机数的类
+	(2)构造方法：
+		public Random()
+		public Random(long seed)
+
+		种子相同，产生的随机数也相同。
+	(3)成员方法：
+		public int nextInt():int范围内的数据
+		public int nextInt(int n):[0,n)范围内的数据
+
+		产生1-100之间的随机数：
+			Random r = new Random();
+			int number = r.nextInt(100) + 1;
+
+4：System(理解)
+	(1)提供了一些有用的类字段和方法
+	(2)成员方法
+		public static void gc()
+		public static void exit(int status)
+		public static long currentTimeMillis()
+		public static void arraycopy(Object src,int srcPos,Object dest,int destPos,int length)
+
+5：BigInteger/BigDecimal(理解)
+	(1)BigInteger
+		A:构造方法
+			public BigInteger(String val)
+		B:成员方法
+			public BigInteger add(BigInteger val)
+			public BigInteger subtract(BigInteger val)
+			public BigInteger multiply(BigInteger val)
+			public BigInteger divide(BigInteger val)
+			public BigInteger[] divideAndRemainder(BigInteger val)
+	(2)BigDecimal(掌握)
+		A:构造方法
+			public BigDecimal(String val)
+		B:成员方法
+			public BigDecimal add(BigDecimal augend)
+			public BigDecimal subtract(BigDecimal subtrahend)
+			public BigDecimal multiply(BigDecimal multiplicand)
+			public BigDecimal divide(BigDecimal divisor)
+			public BigDecimal divide(BigDecimal divisor,int scale,
+			     int roundingMode)
+
+6：Date/DateFormat/Calendar(掌握)
+	(1)Date
+		A:构造方法
+			public Date()
+			public Date(long date)
+		B:成员方法
+			public long getTime()
+			public void setTime(long time)
+	(2)SimpleDateFormat
+		A:构造方法
+			public SimpleDateFormat(String pattern)
+			常见模式：yyyy-MM--dd HH:mm:ss
+		B:成员方法
+			public final String format(Date date)
+			public Date parse(String source)
+	(3)Calendar
+		A:如何得到对象呢?
+			public static Calendar getInstance()
+		B:成员方法
+			public int get(int field)
+			public void add(int field,int amount)
+			public final void set(int year,int month,int date)
+	(4)案例：
+		A:你来到这个世界多少天呢?
+		B:任意一年的2月份有多少天?
