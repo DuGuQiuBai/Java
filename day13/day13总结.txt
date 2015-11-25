@@ -1,0 +1,148 @@
+1：StringBuffer/StringBuilder(掌握)
+	(1)StringBuffer是线程安全的可变字符串。
+	   StringBuilder是线程不安全的可变字符串。
+	   和StringBuffer的功能一样。就是效率高一些，但是不安全。
+	(2)构造方法：
+		A:StringBuffer sb = new StringBuffer();
+		B:StringBuffer sb = new StringBuffer(50);
+		C:StringBuffer sb = new StringBuffer("hello");
+	(3)成员方法：(自己补齐方法和意思)
+		A:添加功能
+			public StringBuffer append(String str):追加字符串
+			public StringBuffer insert(int offset,String str):在指定位置插入字符串
+		B:删除功能
+			public StringBuffer deleteCharAt(int index):删除指定位置字符
+			public StringBuffer delete(int start,int end):删除从指定开始到结束的字符，左包右不包
+		C:替换功能
+			public StringBuffer replace(int start,int end,String str):以字符串替代从指定开始到结束的字符
+		D:反转功能
+			public StringBuffer reverse():反转
+		E:截取功能
+			public String substring(int start):从指定索引到末尾的字符串
+			public String substring(int start,int end):从指定索引开始到指定索引结束的字符串
+	(4)案例：
+		A:String和StringBuffer的相互转换
+			通过构造即可。
+		B:把数组转成指定的字符串格式
+		C:把字符串反转
+		D:判断一个字符串是否是对称字符串
+
+2：数组高级部分(理解)
+	(1)排序
+		A:冒泡排序
+			相邻元素，两两比较，大的往后放。
+
+			public static void bubbleSort(int[] arr) {
+				for(int x=0; x<arr.length-1; x++) {
+					for(int y=0; y<arr.length-1-x; y++) {
+						if(arr[y]>arr[y+1]) {
+							int temp = arr[y];
+							arr[y] = arr[y+1];
+							arr[y+1] = temp;
+						}
+					}
+				}
+			}
+
+		B:选择排序
+			从0开始，依次和后面的比较，小的往前放。
+
+			public static void selectSort(int[] arr) {
+				for(int x=0; x<arr.length-1; x++) {
+					for(int y=x+1; y<arr.length; y++) {
+						if(arr[y] < arr[x]) {
+							int temp = arr[x];
+							arr[x] = arr[y];
+							 arr[y] = temp;
+						}
+					}
+				}
+			}
+	(2)查找
+		A:基本查找
+			数组无序
+		B:二分查找
+			数组有序
+
+			public static int getIndex(int[] arr,int value) {
+				int max = arr.length-1;
+				int min = 0;
+				int mid = (max+min)/2;
+
+				while(arr[mid] != value) {
+					if(arr[mid] > value) {
+						max = mid - 1;
+					}else if(arr[mid] < value) {
+						min = mid + 1;
+					}
+
+					if(max < min) {
+						return -1;
+					}
+
+					mid = (max+min)/2;
+				}
+
+				return mid;
+			}
+
+3：Arrays工具类(掌握)
+	(1)Arrays是针对数组进行操作的工具类，提供了排序和查找等功能
+	(2)成员方法：(自己补齐方法和意思)
+		A:把数组转成字符串
+			public static String toString():将任意类型数据转换成字符串
+		B:排序
+			public static void sort()：
+		C:二分查找
+			public static int binarySearch(int[] arr,int key)
+	(3)案例：
+		把字符串中的字符进行排序
+
+4：基本类型包装类(掌握)
+	(1)为了让我们对基本类型进行更多的操作，java针对每种基本类型提供了对应的包装类类型。
+	(2)分别是哪些呢?
+		byte		Byte
+		short		Short
+		int		Integer
+		long		Long
+		float		Float
+		double		Double
+		char		Character
+		boolean		Boolean
+	特殊：  void		Void
+	(3)Integer
+		A:构造方法
+			a:Integer i = new Integer(100);
+			b:Integer i = new Integer("100");
+		B:成员方法(自己补齐方法和意思)
+			a:把字符串转成int类型
+				String-int:Integer.parseInt()
+				int-String:String.valueOf()
+					   Integer.toString()
+		C:JDK5的新特性
+			自动装箱：
+				int -- Integer		//Integer.valueOf()
+			自动拆箱：
+				Integer -- int		//Integer.intValue()
+
+			请解释：
+				Integer i = 100;
+				i+=200;
+				System.out.println(i);
+		D:byte缓存池面试题
+			byte,short,char--->小于127，否则报-6的错误(查看JDK)
+	(4)Character
+		A:构造方法
+			Character ch = new Character('a');
+		B:成员方法(自己补齐方法和意思)
+			a:判断字符是否是大写字母
+				public boolean isUpperCase(char ch)
+			b:判断字符是否是小写字母
+				public boolean isLowerCase(Char ch)
+			c:判断字符是否是数字字符
+				public boolean isDigit(Char ch)
+			d:把字符转成大写
+				public Char toUpperCase(Char ch)
+
+			e:把字符转成小写
+				public Char toLowerCase(Char ch)

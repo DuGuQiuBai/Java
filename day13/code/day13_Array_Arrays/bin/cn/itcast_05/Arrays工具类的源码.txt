@@ -1,0 +1,61 @@
+1:public static String toString(int[] a)
+
+ 	public static String toString(int[] a) {
+ 		//a -- arr -- { 24, 13, 69, 80, 57 };
+ 		
+        if (a == null)
+            return "null";
+            
+        int iMax = a.length - 1; //4
+        
+        if (iMax == -1)	//如果数组中没有元素
+            return "[]";
+
+        StringBuilder b = new StringBuilder();
+        b.append('['); //[24, 13, 69, 80, 57]
+        for (int i = 0; ; i++) {
+            b.append(a[i]);
+            if (i == iMax)
+                return b.append(']').toString();
+            b.append(", ");
+        }
+    }
+    
+    int[] arr = { 24, 13, 69, 80, 57 };
+    System.out.println(Arrays.toString(arr));
+----------------------------------------------------------
+
+2:public static int binarySearch(int[] a,int key)
+
+	public static int binarySearch(int[] a, int key) {
+		//a -- arr -- { 24, 13, 69, 80, 57 }
+		//key -- 244
+        return binarySearch0(a, 0, a.length, key);
+    }
+    
+    private static int binarySearch0(int[] a, int fromIndex, int toIndex,
+                                     int key) {
+        //a -- { 13, 24, 57，69， 80}
+        //fromIndex = 0
+        //toIndex = 5
+        //key = 244;                  
+                                                  
+        int low = fromIndex; //0
+        int high = toIndex - 1; //4
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1; //2,3,4
+            int midVal = a[mid];  //57,69,80
+
+            if (midVal < key)
+                low = mid + 1; //3，4，5
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+    
+    int[] arr = { 24, 13, 69, 80, 57 };
+    System.out.println(Arrays.binarySearch(arr, 244));
