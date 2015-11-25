@@ -1,0 +1,38 @@
+String s1 = "admin";
+String s2 = "admin";
+System.out.println(s1.equals(s2));
+
+	private final char value[]; //字符串其本质就是一个字符数组。底层自己可以实现转换。
+
+	public boolean equals(Object anObject) {
+		//this	--	s1
+		//anObject	--	s2
+	
+		//比较对象的地址是否相同
+        if (this == anObject) {
+            return true;
+        }
+        
+        //判断anObject是不是字符串的一个对象
+        if (anObject instanceof String) {
+        	//如果anObject对象是字符串对象，就转换为一个字符串
+            String anotherString = (String) anObject;
+            
+            int n = value.length; 
+            //value.length --> this.value.length --> s1.toCharArray().length
+            
+            if (n == anotherString.value.length) {
+                char v1[] = value; //--> this.value --> s1.toCharArray()
+                char v2[] = anotherString.value; //--> s2.toCharArray()
+                int i = 0;
+                while (n-- != 0) {
+                    if (v1[i] != v2[i])
+                            return false;
+                    i++;
+                }
+                return true;
+            }
+        }
+        
+        return false;
+    }
