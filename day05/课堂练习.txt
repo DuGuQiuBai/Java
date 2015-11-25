@@ -1,0 +1,68 @@
+1:遍历数组
+	public static void printArray(int[] arr) {
+		System.out.print("[");
+		for(int x=0; x<arr.length; x++) {
+			if(x == arr.length - 1) {
+				System.out.print(arr[x]);
+			}else {
+				System.out.print(arr[x]+", ");
+			}
+		}
+		System.out.println("]");
+	}
+
+2:获取最值
+	public static int getMax(int[] arr) {
+		int max = arr[0];
+
+		for(int x=1; x<arr.length; x++) {
+			if(arr[x] > max) {
+				max = arr[x];
+			}
+		}
+
+		return max;
+	}
+
+	public static int getMax(int[] arr) {
+		int min = arr[0];
+
+		for(int x=1; x<arr.length; x++) {
+			if(arr[x] < min) {
+				min = arr[x];
+			}
+		}
+
+		return min;
+	}
+
+3:数组反转
+	public static void reverse(int[] arr) {
+		for(int start=0,end=arr.length-1; start<=end; start++,end--) {
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+		}
+	}
+
+
+4:查表法
+	String[] strArray = {"","星期一","星期二","星期三","星期四","星期五","星期六","星期日"};
+
+	int index = ???;
+
+	System.out.println(strArray[index]);
+
+5:查找元素在数组中第一次出现的索引
+	public static int getIndex(int[] arr,int key) {
+		int index = -1;
+
+		for(int x=0; x<arr.length; x++) {
+			if(arr[x] == key) {
+				index = x;
+				break;
+			}
+		}
+
+		return index;
+	}
