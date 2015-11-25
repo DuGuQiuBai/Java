@@ -1,0 +1,22 @@
+		类	成员变量	构造方法	成员方法
+private			Y		Y		Y
+默认		Y	Y		Y		Y
+protected		Y		Y		Y
+public		Y	Y		Y		Y
+abstract	Y					Y
+final		Y	Y				Y
+static			Y				Y
+
+注意：4种权限修饰符只能有一种存在。
+
+类：
+	常用public即可
+成员变量：
+	常用private即可
+构造方法：
+	常用public即可
+成员方法：
+	常用public即可
+
+在接口中：
+	void show();
