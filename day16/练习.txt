@@ -1,0 +1,8 @@
+用window记事本实现：存储字符串并遍历。
+遍历要求除了Collection用迭代器，其他的用迭代器和普通for两种方式
+
+Collection(1,2,3)
+List(4,5,6)
+ArrayList(7,8)
+Vector(9,10)
+LinkedList(11,12)
