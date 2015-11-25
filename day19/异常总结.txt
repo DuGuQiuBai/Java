@@ -1,0 +1,42 @@
+1：异常(理解)
+	(1)程序出现的不正常的情况。
+	(2)异常分类
+		Throwable
+			|--Error	严重的问题，不需要处理
+			|--Exception
+				|--RuntimeException	可以处理，也可以不处理。一般就是程序出问题了，需要该程序。
+				|--非RuntimeException	是需要进行处理的，否则编译不通过。
+		举例：班长去旅游
+	(3)jvm的默认处理方案
+		把异常的类名，原因，和位置等信息输出在了控制台。
+		会在哪里跌倒哪里坐下来。程序停止。
+	(4)自己处理异常的方案
+		A:try...catch...finally
+			变形:
+				try...catch...
+				try...catch...catch...catch...
+				try...catch...finally
+				try...catch...catch...catch...finally
+				try...finally
+		B:throws
+			把问题抛出
+	
+		建议使用A处理方案。实在解决不了，使用B方案。
+	(5)编译时期异常和运行时期异常的区别?
+		A:编译时期异常	必须处理，否则程序不能通过编译
+		B:运行时期异常	可以处理，也可以不处理。一般不处理。
+	(6)throws和throw的区别?
+		A:throws
+			方法声明上,后面跟的是类名,用逗号隔开，可以跟多个。表示可能有异常
+		B:throw
+			方法体中,后面跟的是对象名,只能跟一个。表示有一个异常产生
+	(7)finally的面试题?
+		A:特点及注意事项
+			a:被finally控制的代码永远会执行
+			b:注意
+				在执行finally之前jvm退出了，就不会执行了
+		B:final,finally和finalize的区别?
+		C:如果catch里面有return，finally还执行吗?如果执行，在return前还是后。
+	(8)自定义异常 把最后一个代码练习一遍。
+
+	看到写代码调用方法，出现了问题，会看信息和点击鼠标即可。
