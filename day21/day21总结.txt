@@ -1,0 +1,79 @@
+1:字节缓冲流(掌握)
+	(1)为了提高效率，java就提供了字节缓冲区流。
+	(2)字节缓冲区流
+		BufferedInputStream
+		BufferedOutputStream
+	(3)复制视频文件
+		A:基本字节流一次读写一个字节
+		B:基本字节流一次读写一个字节数组
+		C:高效字节流一次读写一个字节
+		D:高效字节流一次读写一个字节数组
+	(4)流的一些名字
+		A:节点流 基本流
+		B:处理流 高级流
+		
+2:转换流(理解)
+	(1)因为字节流操作文本文件不是特别的方便，所以，java就提供了转换流。
+	   用来让我们操作文本文件数据更方便一些
+	(2)转换流本身是一个字符流
+		字符流 = 字节流 + 编码表
+	(3)编码表
+		字符和对应数据组成的一张表
+
+		常见编码表：
+			ASCII
+			ISO-8859-1
+			GB2312,GBK,GB18030
+			BIG5
+			UTF-8
+	(4)编码问题
+		A:String的编码问题
+		B:IO流中的编码问题
+
+		方案：
+			统一编码，就不会有任何问题。
+
+3:字符流(掌握)
+	(1)字符流体系
+		Reader
+			|--InputStreamReader
+				|--FileReader
+			|--BufferedReader
+		Writer
+			|--OutputStreamWriter
+				|--FileWriter
+			|--BufferedWriter
+	(2)字符流操作案例
+		A:基本字符流一次读写一个字符
+		B:基本字符流一次读写一个字符数组
+		C:高效字符流一次读写一个字符
+		D:高效字符流一次读写一个字符数组
+		E:高效字符流一次读写一个字符串
+
+4:IO流小结(掌握)
+	IO流
+		|--字节流
+			|--输入流 InputStream
+				|--FileInputStream
+				|--BufferedInputStream
+			|--输出流 OutputStream
+				|--FileOutputStream
+				|--BufferedOutputStream
+		|--字符流
+			|--输入流 Reader
+				|--FileReader
+				|--BufferedReader
+			|--输出流 Writer
+				|--FileWriter
+				|--BufferedWriter
+
+	复制文本文件：
+		9种方案。
+		字节流：4种
+		字符流：5种
+		建议使用字符流。并且用最后一种。
+
+	复制二进制流数据：
+		4种方案。
+
+	如果你不知道，用字节流
