@@ -1,0 +1,172 @@
+1:面向对象思想(理解)
+	(1)面向对象是基于面向过程的一种编程思想
+	(2)思想特点：
+		A:是一种更符合我们思考习惯的思想
+		B:把复杂的问题简单化
+		C:让我们从执行者变成了指挥者
+	(3)举例：
+		A:洗衣服
+		B:吃饭
+		C:买电脑
+	(4)举例并代码体现
+		把大象装进冰箱
+
+2:类与对象(掌握)
+	(1)我们学习编程是为了把现实世界的事物用编程语言描述来实现信息化。
+	(2)现实世界事物是如何表达的呢?
+		属性：外在特征
+		行为：内在行为
+	(3)我们学习的是java语言，它最基本的单位是类。
+	   所以我们要学会用类来体现一个事物。
+	(4)类：是一组相关的属性和行为的集合
+	(5)对象：是该类事物的具体个体。
+	(6)举例：
+		学生 类
+		张三 对象
+
+3:类的组成(掌握)
+	(1)成员变量
+		其实就是变量，只不过定义在类中，方法外，并且可以不用初始化。
+	(2)成员方法
+		其实就是方法，只不过不需要static了
+	(3)案例：
+		学生类
+			class Student {
+				String name;
+				int age;
+
+				public void study() {}
+			}
+
+		手机类(学生自学)
+
+4:类的使用(掌握)
+	(1)创建对象
+		格式：类名 对象名 = new 类名();
+	(2)使用成员
+		成员变量：对象名.变量名;
+		成员方法：对象名.方法名(...);
+
+5:成员变量和局部变量的区别(理解)
+	(1)在类中的位置不同
+		A:成员变量 类中，方法外
+		B:局部变量 方法的形式参数，或者方法体中
+	(2)在内存中的位置不同
+		A:成员变量 在堆中
+		B:局部变量 在栈中
+	(3)生命周期不同
+		A:成员变量 随着对象的存在而存在，随着对象的消失而消失
+		B:局部变量 随着方法的调用而存在，随着方法的调用完毕而消失
+	(4)初始化值不同
+		A:成员变量 有默认初始化值
+		B:局部变量 没有默认值，必须先声明，赋值，最后才能使用
+
+6:形式参数问题(理解)
+	(1)基本类型
+		基本类型作为形式参数，需要的是该基本类型的值。
+	(2)引用类型
+		引用类型作为形式参数，需要的是该引用类型的地址值。(对象)
+
+7:匿名对象(理解)
+	(1)匿名对象：没有名字的对象。是对象的简化书写方式。
+	(2)使用场景
+		A:调用方法，仅仅只调用一次
+		B:作为实际参数传递
+
+8:封装(掌握)
+	(1)隐藏实现细节，提供公共的访问方式
+	(2)好处：
+		A:隐藏实现细节，提供公共的访问方式
+		B:提高了代码的复用性
+		C:提高了代码的安全性
+	(3)使用原则
+		A:把成员变量隐藏
+		B:给出该成员变量对应的公共访问方式
+
+9:private关键字(掌握)
+	(1)是一个权限修饰符
+	(2)可以修饰类的成员(成员变量和成员方法)
+	(3)仅仅在本类中可以访问
+	(4)标准代码：
+		class Student {
+			private String name;
+			private int age;
+
+			public void setName(String n) {
+				name = n;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setAge(int a) {
+				age = a;
+			}
+
+			public int getAge() {
+				return age;
+			}
+
+			public void study() {}
+		}
+
+10:this关键字(掌握)
+	(1)this：代表本类的对象
+	(2)应用场景：
+		解决了局部变量隐藏成员变量的问题。
+		其他用法和super一起讲。
+	(3)标准代码：
+		class Student {
+			private String name;
+			private int age;
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setAge(int age) {
+				this.age = age;
+			}
+
+			public int getAge() {
+				return age;
+			}
+
+			public void show() {
+				System.out.println("姓名是："+name+",年龄是："+age);
+			}
+
+			public void study() {
+				System.out.println("学生爱学习");
+			}
+
+			public void eat() {
+				System.out.println("学生要吃饭");
+			}
+
+			public void sleep() {
+				System.out.println("学生想睡觉");
+			}
+		}
+
+		class StudentTest {
+			public static void main(String[] args) {
+				Student s = new Student();
+
+				s.setName("林青霞");
+				s.setAge(28);
+
+				s.show();
+				s.study();
+				s.eat();
+				s.sleep();
+
+				System.out.println("姓名是："+s.getName());
+				System.out.println("年龄是："+s.getAge());
+			}
+		}
