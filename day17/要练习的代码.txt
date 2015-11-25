@@ -1,0 +1,283 @@
+集合的操作步骤：
+	A:创建集合对象
+	B:创建元素对象
+	C:把元素添加到集合
+	D:遍历集合
+
+集合的遍历方式：
+	Collection:迭代器,增强for
+		|--List:普通for
+		|--Set:
+
+字符串(随便给 hello,world,java)
+自定义对象(学生类)
+	class Student {
+		private String name;
+		private int age;
+
+		public Student() {}
+
+		public Student(String name,int age) {
+			this.name = name;
+			this.age = age;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+		public int getAge() {
+			return age;
+		}
+	}
+
+1：Collection
+	A:字符串
+		Collection<String> c = new ArrayList<String>();
+
+		c.add("hello");
+		c.add("world");
+		c.add("java");
+
+		Iterator<String> it = c.iterator();
+		while(it.hasNext()) {
+			String s = it.next();
+			System.out.println(s);
+		}
+
+		for(String s : c) {
+			System.out.println(s);
+		}
+
+	B:自定义对象
+		Collection<Student> c = new ArrayList<Student>();
+
+		Student s1 = new Student("李连杰",50);
+		Student s2 = new Student("赵文卓",40);
+		Student s3 = new Student("吴京",30);
+
+		c.add(s1);
+		c.add(s2);
+		c.add(s3);
+
+		Iterator<Student> it = c.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		for(Student s : c) {
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+2：List
+	A:字符串
+		List<String> list = new ArrayList<String>();
+
+		list.add("hello");
+		list.add("world");
+		list.add("java");
+
+		Iterator<String> it = list.iterator();
+		while(it.hasNext()) {
+			String s = it.next();
+			System.out.println(s);
+		}
+
+		for(String s : list) {
+			System.out.println(s);
+		}
+
+		for(int x=0; x<list.size(); x++) {
+			String s = list.get(x);
+			System.out.println(s);
+		}
+
+	B:自定义对象
+		List<Student> list = new ArrayList<Student>();
+
+		Student s1 = new Student("李连杰",50);
+		Student s2 = new Student("赵文卓",40);
+		Student s3 = new Student("吴京",30);
+
+		list.add(s1);
+		list.add(s2);
+		list.add(s3);
+
+		Iterator<Student> it = list.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		for(Student s : list) {
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		for(int x=0; x<list.size(); x++) {
+			Student s = list.get(x);
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+3：ArrayList(掌握 自己补齐)
+	A:字符串
+		ArrayList<String> array  = new ArrayList<String>();
+
+		array.add("java");
+		array.add("hello");
+		array.add("world");
+
+		//普通for循环
+		for(int i =0; i<array.size(); i++) {
+			String s = array.get(i);
+			System.out.println(s);
+		}
+
+		//增强for
+		for(String s : array) {
+			System.out.println(s);
+		}
+
+		//迭代器
+		Iterator<String> it = array.iterator();
+		while(it.hasNext()) {
+			String s = it.next();
+			System.out.println(s);
+		}
+	B:自定义对象
+		ArrayList<Student> array = new ArrayList<Student>();
+
+		Student s1 = new Student("laozi",1000);
+		Student s2 = new Student("kongzi",100);
+		Student s3 = new Student("zhuangzi",10);
+
+		array.add(s1);
+		array.add(s2);
+		array.add(s3);
+
+		//普通for循环
+		for (int i = 0; i<array.size(); i++) {
+			Student s = array.get(i);
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		//增强for循环
+		for (Student s : array) {
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		//迭代器循环
+		for(Iterator<Student> it = array.iterator(); it.hasNext();) {
+			Student s = it.next();
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+		
+
+4：Vector(自己补齐)
+A:字符串
+		Vector<String> vector = new Voctor<String>();
+
+		vector.add("java");
+		vector.add("hello");
+		vector.add("world");
+
+		//普通for循环
+		for(int i =0; i<vector.size(); i++) {
+			String s = vector.get(i);
+			System.out.println(s);
+		}
+
+		//增强for
+		for(String s : vector) {
+			System.out.println(s);
+		}
+
+		//迭代器
+		Iterator<String> it = vector.iterator();
+		while(it.hasNext()) {
+			String s = it.next();
+			System.out.println(s);
+		}
+	B:自定义对象
+		vectorList<Student> array = new vectorList<Student>();
+
+		Student s1 = new Student("laozi",1000);
+		Student s2 = new Student("kongzi",100);
+		Student s3 = new Student("zhuangzi",10);
+
+		vector.add(s1);
+		vector.add(s2);
+		vector.add(s3);
+
+		//普通for循环
+		for (int i = 0; i<vector.size(); i++) {
+			Student s = vector.get(i);
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		//增强for循环
+		for (Student s : vector) {
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		//迭代器循环
+		for(Iterator<Student> it = vector.iterator(); it.hasNext();) {
+			Student s = it.next();
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+5：LinkedList(掌握 自己补齐)
+
+6：Set
+	A:字符串
+		Set<String> set = new HashSet<String>();
+
+		set.add("hello");
+		set.add("world");
+		set.add("java");
+
+		Iterator<String> it = set.iterator();
+		while(it.hasNext()) {
+			String s = it.next();
+			System.out.println(s);
+		}
+
+		for(String s : set) {
+			System.out.println(s);
+		}
+
+	B:自定义对象
+		Set<Student> set = new HashSet<Student>();
+
+		Student s1 = new Student("李连杰",50);
+		Student s2 = new Student("赵文卓",40);
+		Student s3 = new Student("吴京",30);
+
+		set.add(s1);
+		set.add(s2);
+		set.add(s3);
+
+		Iterator<Student> it = set.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+		for(Student s : set) {
+			System.out.println(s.getName()+"---"+s.getAge());
+		}
+
+7：HashSet(掌握 自己补齐)
+	存储自定义对象的时候，如果成员变量值相同，我们就认为是同一个元素。
+
+8：TreeSet(掌握 自己补齐)
+	存储自定义对象的时候，如果成员变量值相同，我们就认为是同一个元素。
+	首先根据年龄从小到大排序，其次在根据姓名的长度排序。
