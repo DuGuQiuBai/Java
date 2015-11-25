@@ -1,0 +1,210 @@
+1：循环语句(掌握)
+	(1)for循环
+		for(初始化表达式;条件表达式;控制条件表达式){
+			循环体;
+		}
+
+		执行流程：
+			A:首先执行初始化表达式
+			B:其次执行条件表达式，看其返回值
+				如果是true，就继续
+				如果是false，就结束循环
+			C:执行循环体;
+			D:执行控制条件表达式
+			E:回到B
+	(2)while循环
+		基本格式：
+		while(条件表达式){
+			语句体;
+		}
+		
+		变形：
+		初始化表达式;
+		while(条件表达式){
+			循环体;
+			控制条件表达式;
+		}
+	(3)do...while循环(理解)
+		基本格式：
+		do {
+			语句体;
+		}while(条件表达式);
+
+		变形:
+		初始化表达式;
+		do{
+			循环体;
+			控制条件表达式;
+		}while(条件表达式);
+	(4)三种循环的区别
+		A:do...while至少执行一次循环体，而其他两种循环都是先判断在执行。
+		B:while和for循环是可以等价转换的。在使用的时候，优先选择for。
+			规则：
+				a:如果控制条件表达式控制的那个变量，后面还要使用，只能使用while
+				b:for适合范围的取值，while适合次数不明确的操作
+	(5)注意事项：
+		死循环：
+			for(;;){}
+
+			while(true){}
+	(6)案例：
+		A:输出10次HelloWorld
+			for(int x=0; x<10; x++) {
+				System.out.println("HelloWorld");
+			}
+		B:输出1-10
+			for(int x=1; x<=10; x++) {
+				System.out.println(x);
+			}
+		C:输出10-1
+			for(int x=10; x>0; x--) {
+				System.out.println(x);
+			}
+		D:求1-10的和
+			int sum = 0;
+			for(int x=1; x<=10; x++) {
+				sum += x;
+			}
+			System.out.println(sum);
+		E:求1-100的偶数和(奇数自己写)
+			//方式1：
+			int sum = 0;
+			for(int x=0; x<=100; x+=2) {
+				sum += x;
+			}
+			System.out.println(sum);
+
+			//方式2：
+			int sum = 0;
+			for(int x=0; x<=100; x++) {
+				if(x%2 == 0){
+					sum += x;
+				}
+			}
+			System.out.println(sum);
+		F:输出水仙花的数
+			for(int x=100; x<1000; x++) {
+				int ge = x%10;
+				int shi = x/10%10;
+				int bai = x/10/10%10;
+
+				if(x == (ge*ge*ge+shi*shi*shi+bai*bai*bai)) {
+					System.out.println(x);
+				}
+			}
+		G:统计水仙花的个数
+			int count = 0;
+			for(int x=100; x<1000; x++) {
+				int ge = x%10;
+				int shi = x/10%10;
+				int bai = x/10/10%10;
+
+				if(x == (ge*ge*ge+shi*shi*shi+bai*bai*bai)) {
+					count++;
+				}
+			}
+			System.out.println(count);
+		H:输出满足条件的5位数
+			for(int x=10000; x<100000; x++) {
+				int ge = x%10;
+				int shi = x/10%10;
+				int bai = x/10/10%10;
+				int qian = x/10/10/10%10;
+				int wan = x/10/10/10/10%10;
+
+				if((ge==wan) && (shi==qian) && (bai==ge+shi+qian+wan)) {
+					System.out.println(x);
+				}
+			}
+		I:统计满足条件的数据
+			int count = 0;
+			for(int x=0; x<1000; x++) {
+				if(x%3==2 && x%5==3 && x%7==2) {
+					count++;
+				}
+			}
+			System.out.println(count);
+		J:折叠次数
+			int start = 1;
+			int end = 884800;
+			int count = 0;
+
+			while(start<=end) {
+				count++;
+
+				start*=2;
+			}
+
+			System.out.println(count);
+		K:小芳存钱的题目，自己把代码看懂即可。
+
+2：控制跳转语句(掌握)
+	(1)break:中断
+		A:场景
+			switch
+			循环语句中
+		B:使用
+			退出单层循环
+			退出多层循环(带标签的使用)
+	(2)continue:继续
+		A:场景
+			循环语句中
+		B:使用
+			退出单层循环
+			退出多层循环(带标签的使用)
+
+		break和continue的区别：
+			break:退出整个循环
+			continue:退出一次循环，进行下一次
+	(3)return:返回
+		返回，让方法结束。其实在void类型的方法，最后也有一个return。
+		只不过是：reutrn;
+	(4)在控制台输出多少次：	
+		"Java基础班"
+
+3：方法(掌握)
+	(1)方法：完成特定功能的代码块。
+		在很多语言中叫函数。
+	(2)格式：
+		修饰符 返回值类型 方法名(数据类型 变量名1,数据类型 变量名2...) {
+			方法体;
+			return 返回值;
+		}
+
+		A:修饰符 目前就记住：public static
+		B:返回值类型 功能的结果的数据类型，如果没有结果返回，这里写void
+		C:方法名 就是起个名字，最好能见名知意。方便我们调用方法。
+		D:参数
+			形式参数：用于接受实际参数的变量，方法定义的时候。
+			实际参数：实际参与运算的数据，方法调用的时候。
+		E:方法体 就是完成功能的代码
+		F:return 返回值：是把功能的结果通过return带回到调用它的地方
+	(3)注意事项
+		A:方法不调用不执行
+		B:方法间是平级关系，不能嵌套定义
+		C:方法定义时，如果有多个参数，用逗号隔开
+		D:方法调用是，可以传递变量，常量。但是不能带数据类型。
+	(4)如何写一个方法：两个明确
+		返回值类型：就是结果的数据类型
+		参数列表：有几个变量，并且每个变量的数据类型。
+	(5)方法的调用
+		A:带有明确返回值的方法调用
+			a:单独调用，一般没有意义
+			b:输出调用，不够好，因为我们可能需要对结果进行进一步的操作
+			c:赋值调用 推荐方案
+		B:没有明确返回值的方法调用(void修饰)
+			a:单独调用
+		
+		调用一个方法：
+			名字不能错。
+			参数：人家要几个，你就给几个；人家要什么，你就给什么。
+			返回值：人家返回什么类型，你就应该用什么类型接受。void除外。
+	(6)练习：
+		带有明确返回值
+		A:两个数的较大值
+		B:比较两个数是否相等
+		C:三个数的最大值
+
+		没有明确返回值
+		D:m行n列的星形
+		E:nn乘法表
