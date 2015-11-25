@@ -1,0 +1,85 @@
+1：递归(理解)
+	(1)方法定义中调用方法本身的现象。
+	(2)注意事项：
+		A:一定要有出口，否则就是死递归
+		B:不要次数过多，否则内存溢出
+		C:构造方法不能递归使用
+	(3)举例：
+		A:老和尚给小和尚讲故事
+		B:学Java
+	(4)案例：(A,B必须掌握，C,D要看懂)
+		A:递归求阶乘
+		B:递归解决兔子问题
+		C:递归输出指定目录下指定后缀名的文件的绝对路径
+		D:递归删除带内容的目录
+
+2：IO流(掌握)
+	(1)IO流：
+		A:用于实现设备间的数据传输问题
+			上传文件，下载文件
+		B:java中数据以IO流的形式传输
+		C:针对流操作的对象都在io包中
+	(2)IO流的分类
+		A:流向
+			输入流
+			输出流
+		B:数据类型
+			字节流
+			字符流
+		
+		a:如果没有明确指定，默认按照数据类型分。
+		b:通过windows记事本打开并能够读懂的文件，就用字符流。
+		  否则，用字节流。
+		  如果你不知道，建议永远使用字节流。
+	(3)FileOutputStream写数据
+		步骤：
+			A:创建字节输出流对象
+			B:调用写数据功能
+			C:释放资源
+
+		代码体现：
+			FileOutputStream fos = new FileOutputStream("fos.txt");
+
+			fos.write("helloworld".getBytes());
+
+			fos.close();
+
+		几个小问题：
+			A:创建字节输出流对象做了几件事情?
+			B:写完数据后，为什么要close()呢?
+			C:如何实现数据的换行呢?
+			D:如何实现数据的追加写入呢?
+			E:要求能够看懂加入异常处理后的IO代码
+	(4)FileInputStream读数据
+		步骤：
+			A:创建字节输入流对象
+			B:调用读数据功能
+			C:释放资源
+
+		代码体现：
+			FileInputStream fis = new FileInputStream("fis.txt");
+
+			//方式1:一次读取一个字节
+			int by = 0;
+			while((by=fis.read())!=-1) {
+				System.out.print((char)by);
+			}
+			
+
+			//方法2:一次读取一个字节数组
+			byte[] bys = new byte[1024];
+			int len = 0;
+			while((len=fis.read(bys))!=-1) {
+				System.out.print(new String(bys,0,len));
+			}
+
+			fis.close();
+	(5)案例：
+		复制文件
+			数据源：读数据
+			目的地：写数据
+
+		A:	项目路径下的a.txt,到项目路径下的b.txt
+		B:	c:\\a.txt到d:\\b.txt
+		C:	e:\\林青霞.jpg到项目路径下的mn.jpg
+		D:	e:\\哥有老婆.mp4到项目路径下的copy.mp4
