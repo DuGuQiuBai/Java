@@ -1,0 +1,53 @@
+1：Collection集合体系结构
+	Collection
+		|--List(元素有序，可重复)
+			|--ArrayList
+				底层数据结构是数组，查询快,增删慢
+				线程不安全,效率高
+			|--Vector
+				底层数据结构是数组，查询快,增删慢
+				线程安全,效率低
+			|--LinkedList
+				底层数据结构是链表，查询慢,增删快
+				线程不安全,效率高
+		|--Set(元素无序，唯一)
+			|--HashSet
+				底层数据结构是哈希表。
+				保证元素的唯一性?
+					依赖两个方法hashCode()和equals()。
+				|--LinkedHashSet
+					底层数据结构是哈希表和链表
+						由哈希表保证元素唯一
+						由链表保证元素有序
+			|--TreeSet
+				底层数据结构是二叉树(红黑树)
+				保证元素的唯一性?
+					根据比较的返回值是否是0
+				保证元素的排序?
+					自然排序
+					比较器排序
+
+2：针对Collection，你准备使用谁?
+	元素唯一吗?
+		是：Set
+			要排序吗?
+				是：TreeSet
+				否：HashSet
+
+			不知道，就用HashSet
+		否：List
+			要安全吗?
+				要：Vector(其实也不用，有更好的方式，后面讲)
+				不要：ArrayList或者LinkedList
+					查询多：ArrayList
+					增删多：LinkedList
+
+			不知道，就用ArrayList
+
+	不知道，就用ArrayList
+
+3：集合中的数据结构问题
+	ArrayXxx:底层数据结构是数组，查询快，增删慢
+	LinkedXxx:底层数据结构是链表，查询慢，增删快
+	HashXxx:底层数据结构是哈希表。依赖两个方法hashCode()和equals()，根据情况选择是否自动重写
+	TreeXxx:底层数据结构是二叉树。有两种方案：自然排序，比较器排序。
