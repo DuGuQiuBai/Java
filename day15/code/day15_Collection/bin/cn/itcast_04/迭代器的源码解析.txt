@@ -1,0 +1,36 @@
+public interface Iterator {
+	boolean hasNext();
+	Object next();
+}
+
+public interface Iterable {
+	Iterator iterator();
+}
+
+public interface Collection extends Iterable {
+	
+}
+
+public interface List extends Collection {
+	
+}
+
+public class ArrayList implements List {
+	public Iterator iterator() {
+        return new Itr();
+    }
+    
+     private class Itr implements Iterator {
+     	public boolean hasNext() {...}
+     	
+		public Object next(){...}
+     }
+}
+
+Collection c = new ArrayList();
+
+Iterator it = c.iterator(); //new Itr()
+
+while(it.hasNext()) {
+	it.next();
+}

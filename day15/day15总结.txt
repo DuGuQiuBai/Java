@@ -1,0 +1,159 @@
+1：对象数组(掌握)
+	(1)数组：
+		基本类型的数组：int[]
+		引用类型的数组：Student[]
+	(2)案例：
+		用对象数组存储三个学生对象，并遍历。
+
+		学生的代码，我们写过很多遍了。
+		主要代码：
+			Student[] students = new Student[3];
+
+			Student s1 = new Student("林青霞",18);
+			Student s2 = new Student("风清扬",21);
+			Student s3 = new Student("赵雅芝",60);
+
+			students[0] = s1;
+			students[1] = s2;
+			students[2] = s3;
+
+			for(int x=0; x<students.length; x++) {
+				Student s = students[x];
+				System.out.println(s.getName()+"---"+s.getAge());
+			}
+
+2：Collection集合(掌握)
+	(1)集合的由来
+		我们学习的是面向对象的语言，而面向对象的语言常见的操作就是操作对象。
+		为了方便我们对多个对象进行操作，我们可以使用对象数组来进行。
+		但是对象数组的长度是固定的，不适应变化的需求，所以，java就提供了集合
+		供我们来使用。
+	(2)集合的特点
+		A:长度可变
+		B:只能存储引用类型
+		C:可以存储多种引用类型
+	(3)数组和集合的区别
+		A:数组的长度固定;数组可以存储基本类型，也可以存储引用类型;数组存储的是同一种数据类型的元素
+		B:集合的长度可变;集合只能存储引用类型;集合可以存储多种引用类型。
+	(4)集合的继承体系结构
+		多种集合类的数据结构不同，但是功能相似，所以，我们不断的向上抽取，就形成了集合的继承体系结构
+			Collection
+				|--List
+					|--ArrayList
+					|--Vector
+					|--LinkedList
+				|--Set
+					|--HashSet
+					|--TreeSet
+	
+		面对这样的继承体系结构,我们该学习谁,使用谁呢?
+			学习：顶层，因为顶层定义的是共性功能。
+			使用：底层，因为底层才是具体的实现类，并且具有最多的功能。
+	(5)Collection的功能概述：(自己补齐中文意思)
+		A:添加功能
+			add(Object obj)
+			addAll(Collection c)
+		B:移除功能
+			remove(Object obj)
+			removeAll(Collection c)
+			clear()
+		C:判断功能
+			contains(Object obj)
+			containsAll(Collection c)
+			isEmpty()
+		D:获取功能
+			iterator()
+			size()
+		E:交集功能
+			retainAll(Collection c)
+		F:转数组功能
+			toArray()
+
+		注意：
+			所有带all的不用掌握
+			交集和转数组不用掌握
+	(6)迭代器的使用
+		A:迭代器的使用
+			依赖于集合存在,本身有两个方法
+			a:hasNext()
+			b:next()
+		B:集合的使用步骤
+			a:创建集合对象
+			b:创建元素对象
+			c:把元素添加到集合中
+			d:遍历集合
+				通过集合对象获取迭代器对象
+				通过迭代器对象的hasNext()方法判断是否有元素
+				通过迭代器对象的next()方法获取元素，并移动到下一个位置
+		C:迭代器的原理
+			定义为了接口，由具体的集合类通过内部类的方式提供实现。
+	(7)案例：
+		A:Collection存储字符串并遍历
+			Collection c = new ArrayList();
+
+			c.add("hello");
+			c.add("world");
+			c.add("java");
+
+			Iterator it = c.iterator();
+			while(it.hasNext()) {
+				String s = (String) it.next();
+				System.out.println(s);
+			}
+		B:Collection存储自定义对象并遍历
+			Collection c = new ArrayList();
+
+			Student s1 = new Student("林青霞",18);
+			Student s2 = new Student("风清扬",21);
+			Student s3 = new Student("赵雅芝",60);
+
+			c.add(s1);
+			c.add(s2);
+			c.add(s3);
+
+			Iterator it = c.iterator();
+			while(it.hasNext()) {
+				Student s = (Student) it.next();
+				System.out.println(s.getName()+"---"+s.getAge());
+			}
+
+3：List集合(掌握)
+	(1)List集合的特点
+		元素有序(存储顺序和取出顺序一致),可重复。
+	(2)List集合的特有功能：(自己补齐中文意思)
+		A:add(int index,Object obj)
+		B:remove(int index)
+		C:get(int index)
+		D:set(int index,Object obj)
+		E:listIterator()
+	(3)List集合的特有遍历功能
+		通过size()和get()方法结合即可
+	(4)ListIterator的概述和使用(理解)
+		A:ListIterator是Iterator的子接口
+		B:ListIterator可以逆向遍历，但是意义不大。
+			因为它需要先正向遍历。
+		C:并发修改异常产生的原因和解决方案
+			a:原因
+				用迭代器遍历集合的时候，用集合去修改了集合的元素。
+			b:解决方案
+				用普通for遍历，并用集合去添加元素
+				用列表迭代器遍历，并用列表迭代器去添加元素
+	(5)案例：
+		A:List存储字符串并遍历
+			List list = new ArrayList();
+
+			list.add("hello");
+			list.add("world");
+			list.add("java");
+
+			Iterator it = list.iterator();
+			while(it.hasNext()) {
+				String s = (String) it.next();
+				System.out.println(s);
+			}
+
+			for(int x=0; x<list.size(); x++) {
+				String s = (String) list.get(x);
+				System.out.println(s);
+			}
+		B:List存储自定义对象并遍历(自己补齐)
