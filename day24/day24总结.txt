@@ -1,0 +1,79 @@
+1：多线程(理解)
+	(1)JDK5的Lock锁
+		A:lock()
+		B:unlock()
+	(2)死锁代码
+		代码要看一遍。
+	(3)线程间的通信问题
+		A:基本的代码实现
+		B:解决了线程安全问题的代码
+		C:等待唤醒机制的代码
+		D:通过同步方法改进版的代码
+	(4)线程组
+		ThreadGroup
+	(5)线程池
+		...
+		Executors
+		方法：future<> newFixedThreadPool()
+	(6)多线程方式3
+		实现Callable接口
+
+		好处：
+			A:返回值
+			B:可以抛异常
+		弊端：
+			代码比较麻烦
+
+		案例：
+			求和
+	(7)定时器
+		Timer
+		TimerTask
+		
+2：单例设计模式(理解)
+	(1)保证类在内存中只有一个对象
+	(2)如何实现的?
+		A:构造私有
+		B:自己提供对象
+		C:提供公共访问方式
+	(3)代码实现：
+		A:饿汉式
+			public class Student {
+				private Student(){}
+
+				private static Student s = new Student();
+
+				public static Student getStudent() {
+					return s;
+				}
+			}
+		B:懒汉式
+			public class Student {
+				private Student(){}
+
+				private static Student s = null;
+
+				public static Student getStudent() {
+					if(s == null) {
+						s = new Student();
+					}
+					return s;
+				}
+			}
+	(4)面试和开发
+		A:面试
+			懒汉式
+
+			线程安全问题 必须要synchronized关键字
+			延迟加载思想
+		B:开发
+			饿汉式
+	(5)Runtime
+		是单例模式饿汉式实现。
+		public class Runtime{
+			private Runtime(){}
+			private static Runtime r = new Runtime();
+			public static Runtime getInstance(){
+				return r;
+			}
+		}
