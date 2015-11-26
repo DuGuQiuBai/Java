@@ -1,0 +1,105 @@
+1：异常
+	异常概述：异常是程序出现不正常的情况
+		  班长骑自行车旅游：三种情况
+	异常分类：
+		Throwable
+		     |---Error
+		     |---Exception
+			  |---RuntimeException  运行时异常 可以处理，也可以不处理  需要改代码
+			  |---非RuntimeException 编译时异常  必须处理，否则不能通过编译
+
+	异常处理方式：
+		JVM默认处理的方式：将发生异常的信息输出控制台，并结束程序
+		A：try...catch...finally...
+			多种变形使用：try必须和catch和finally中的一个组合使用
+		finally的特点：被finally控制的语句体都会执行
+			注意事项：finally控制的语句只要在JVM退出之前都会执行
+			
+		B：throws
+			不能处理的异常继续抛出，一般会在main方法中得到解决，即main方法不在抛			出给JVM
+	
+	异常的注意事项：
+		JDK7的新特性：
+			catch(异常1 | 异常2 |...  e):多个异常
+		try...catch：有多个catch语句时，范围最广阔的异常必须放在最后一个
+
+		单个异常：子类只能抛出与父类相同异常或者属于父类异常的子异常
+		多个异常：子类只能抛出与父类相同异常或者属于父类异常的子异常集合
+		没有异常：父类没有抛出异常，子类也不能抛出异常
+
+	自定义异常：
+		必须继承自RuntimeException或者Exception类
+	案例：抛出自定义异常
+		public class MyException extends Exception {
+			public MyException() {
+				super();
+			}
+			public MyException(String message) {
+				super(message);//带输出信息的构造方法
+			}
+		}
+
+	面试题：final，finalize，finally的区别
+			final：表示最终的修饰符
+				修饰类：类不能被继承
+				修饰成员方法：方法不能被重写
+				修饰成员变量：变量成为常量
+			finalize：Object类的方法，用于调用垃圾回收器回收垃圾，与System类的				gc()方法功能一样
+			finally：与异常处理的try...catch...finally配合使用，异常中总是会执行				的代码
+		
+		throws和throw的区别：
+			throws：方法声明上，后面跟的是类名，可以抛出多个异常用逗号隔开，表示				发生异常的可能性
+			throw：方法中最后，后面跟的是只有一个对象，表示发生某种具体的异常
+
+		finally中的语句会在return之前还是之后执行
+			return语句的特点，构成一个返回路径
+		
+2：File类
+	概述：用于表示文件或者文件夹的类
+	
+	构造方法：
+		public File(String pathname)
+		public File(String parent,String filename)
+		public File(File file, String name)
+		public File(URI uri):统一资源定位符，可以从通过网络路径创建文件或者文件夹对					象
+
+	成员方法：
+		创建功能：
+			public boolean createNewFile():创建新文件
+			public boolean mkdir():创建单个目录
+			public boolean mkdirs():创建多层目录
+
+		删除功能：
+			public boolean delete():删除执行文件或文件夹
+			删除的特点：删除不进回收站，直接删除
+
+		判断功能：
+			public boolean isDirectory():判断是否为文件夹
+			public boolean isFile():判断是否为文件
+			public boolean exists():判断是否存在
+			public boolean canWrite():是否可写
+			public boolean canRead():是否可读
+			public boolean isHidden():是否隐藏
+		重命名功能：
+			public boolean rename(String dest):重命名，路径相同重命名，路径不同						剪切后重命名
+
+		获取功能：
+			public String getAbsolutePath():
+			public String getName():
+			public String getPath():
+			public int length():获取文件大小
+			public long lastModified():最近修改时间的毫秒值
+		高级获取功能：
+			public String[] list():字符数组存储某个目录下所有文件和文件夹
+			public File[] listFile():文件数组存储某个目录下所有文件和文件夹
+
+		文件过滤器：
+			public String[] list(fileNameFilter filter):
+			public File[] listFile(fileNameFilter filter):
+				fileNameFilter的匿名内部类，重写accept方法
+					new fileNameFilter(){
+					 public boolean accept(File dir,String name){
+				return new file().isFile() && name.endswit(".jpg");
+					 }
+					}
+		案例：输出某目录下所有JPG结尾的文件
