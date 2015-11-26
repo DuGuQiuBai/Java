@@ -1,0 +1,52 @@
+1：面试题
+	(1)用Reader模拟BufferedReader的readLine()方法
+	(2)用Reader和BufferedReader模拟readNumberLine()方法
+	(3)继承改第二题
+
+2：基本数据操作流
+	DataInputStream/DataOutputStream:能够操作所有的基本类型，注意读写顺序保持一致
+
+3：内存操作流(数组操作流)
+	数据不做永久储存
+	ByteArrayInputStream/ByteArrayOutputStream:字节数组操作流
+	CharArrayReader/CharArrayWriter:字符数组操作流
+	StringReader/StringWriter:字符串操作流
+
+4：打印流
+	PrintWriter/PrintStream：
+	特点：只能操作目的地，不能操作数据源
+		可以操作任意类型的数据
+		如果启用了自动刷新，可以自动刷新：开启自动刷新，与println配合使用，一句顶过			去三句
+		可以直接操作文件：
+			构造方法可以同时接收File和String类型的都可以直接操作文件
+
+	printf的使用：String format   %  格式化输出
+
+5：标准输入输出流
+	System.in:BufferedReader br = new BufferedReader(new InputStream(System.in));
+	System.out:BufferedWriter bw = new BufferedWriter(new OutputStream(System.out));
+	后面参数不具有具体文件路径无需释放资源
+
+
+6：随机存取
+	RandomAccessFile:
+		seek()方法
+
+7：合并流
+	SequenceInputStream:
+	构造方法：
+		接收两个InputStream 参数
+		接收多个InputStream参数：
+
+8：序列化流
+	序列化：为了让对象数据永久储存或者实现在网络中传输而生成的二进制流
+	反序列化：将序列化对象还原
+	如何序列化：实现Seriable接口
+		没有任何方法接口的意义：标记接口
+	解决小问题：只要有一点小小的变动，会重新产生一个序列化id值
+		指定一个固定的SerialVersionUID
+
+9:Properties集合：
+
+10：nio
+	

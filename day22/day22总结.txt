@@ -1,0 +1,106 @@
+1：面试题(理解)
+	(1)通过Reader模拟BufferedReader的readLine()方法
+	(2)通过Reader模拟LineNumberReader的readLine()和getLineNumber()和setLineNumber()
+
+2：数据操作流(理解)
+	(1)可以把基本类型的流写到文本文件，也可以从文本文件中读取
+	(2)数据操作流
+		A:DataInputStream
+		B:DataOutputStream
+
+3：内存操作流(理解)
+	(1)数据仅仅在内存中,但是数据是可以改变的
+	(2)内存操作流
+		A:字节数组
+			ByteArrayInputStream
+			ByteArrayOutputStream
+		B:字符数组
+			CharArrayReader
+			CharArrayWriter
+		C:字符串
+			StringReader
+			StringWriter
+
+4：打印流(掌握)
+	(1)分为字节打印流和字符打印流
+	(2)字符打印流
+		A:只操作目的地，不操作数据源
+		B:可以操作任意的数据类型
+		C:如果启动了自动刷新，在调用println()方法的时候，可以自动刷新和换行
+		D:可以直接操作文件
+			问题：哪些流对象可以直接操作文件呢?
+			看构造方法，如果可以同时接收File和String的参数，就可以。
+	(3)复制文本文件
+		BufferedReader br = new BufferedReader(new FileReader("a.txt"));
+		PrintWriter pw = new PrintWriter(new FileWriter("b.txt"),true);
+
+		String line = null;
+		while((line=br.readLine())!=null) {
+			pw.println(line);
+		}
+
+		pw.close();
+		br.close();
+
+5：标准输入输出流(理解)
+	(1)标准输入流
+		System.in
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	(2)标准输出流
+		System.out
+
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		其实我们的输出语句其本质就是IO流。
+
+		PrintStream ps = System.out;
+		ps.print(...)
+		ps.println(...)
+
+		System.out.print(...)
+		System.out.println(....);
+
+6：随机访问流(理解)
+	(1)可以在指定的位置写数据,也可以从指定的位置读取数据。自己本身既可以写数据，还可以读数据
+	(2)案例自己看去
+
+7：合并流(理解)
+	(1)我们如果要把多个文件合并到一起进行读取，就要使用合并流。
+		分割一个文件。
+			mn.jpg	(4100)
+				001.jpg	1024
+				002.jpg	1024
+				003.jpg	1024
+				004.jpg	1024
+				005.jpg	4
+	(2)可以实现两个文件的合并，以及多个文件的合并
+
+8：序列化流(理解)
+	(1)序列化流
+		把对象按照流一样的方式存储到文件，或者在网络中传输
+	(2)反序列化流
+		把流数据还原成对象
+	(3)如何实现序列化
+		让被序列化的流对象所属的类实现序列化接口
+	(4)如何解决问题?
+		A:小改动，不该文件
+		B:黄色警告线
+
+		点击鼠标，生成一个固定的序列化id值即可
+
+9：Properties(理解)
+	(1)是Map的子集合，可以和IO流进行结合使用。键和值都是字符串
+	(2)特有功能
+		A:添加功能
+			setProperty(String key,String value)
+		B:获取功能
+			getProperty(String key)
+			stringProertyNames()
+	(3)案例
+		A:判断user.txt中有没有键为lisi的，如果有就修改其值为100
+		B:猜数字小游戏只能玩5次
+
+10：NIO介绍(了解)
+	(1)JDK4开始有了NIO包下的东西
+	(2)JDK7的新东西我们写了一个案例
