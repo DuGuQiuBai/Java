@@ -1,0 +1,90 @@
+事件监听机制：
+	事件源	事件发生的地方(组件)
+	事件		要发生的事情
+	事件处理	针对发生的事情处理方式
+	事件监听器	把事件注册到事件源上
+	
+举例：人受伤事件
+	
+	事件源：人
+	
+	事件：受伤
+		interface 受伤 {
+			void 一拳();
+			void 一脚();
+			void 一板砖();
+		}
+		
+	事件处理：受伤处理类
+		class 受伤处理类 implements 受伤 {
+			void 一拳() {
+				sop("鼻子流血了，送到卫生间洗洗");
+			}
+			
+			void 一脚() {
+				sop("晕倒，送到通风处即可");
+			}
+			
+			void 一板砖() {
+				sop("头破血流，送到太平间即可");
+			}
+		}
+		
+	Person p1 = new Person("张三");
+	Person p2 = new Person("李四");
+	p1.注册事件(受伤);	
+	
+如何解决问题：
+	我们仅仅只用一个，而它却有多个，怎么样，才能保证我想几个就用几个呢。
+	
+适配器模式：
+	
+	现在的做法：
+	
+	接口：
+		interface 受伤 {
+			void 一拳();
+			void 一脚();
+			void 一板砖();
+			...
+		}
+		
+	具体类：
+		
+		class 受伤处理类 implements 受伤 {
+				public void 一拳() {
+					sop("鼻子流血了，送到卫生间洗洗");
+				}
+				
+				public void 一脚() {}
+				public void 一板砖() {}
+				...
+			}
+			
+	适配器模式改进：
+	
+	接口：
+		interface 受伤 {
+			void 一拳();
+			void 一脚();
+			void 一板砖();
+			...
+		}
+	
+	适配器类：
+		abstract class 受伤适配器类 implements 受伤 {
+			public void 一拳(){}
+			public void 一脚(){}
+			public void 一板砖(){}
+			...
+		}
+		
+	具体类：
+		
+		class 受伤处理类 extends 受伤适配器类 {
+			public void 一拳() {
+				sop("鼻子流血了，送到卫生间洗洗");
+			}
+		}
+		
+	
