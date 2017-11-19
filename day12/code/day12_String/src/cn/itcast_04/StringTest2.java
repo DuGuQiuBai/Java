@@ -63,5 +63,7 @@ public class StringTest2 {
 		System.out.println("大写：" + bigCount);
 		System.out.println("小写：" + smallCount);
 		System.out.println("数字：" + numberCount);
+		System.out.println("===============");
+		System.out.println("结束");
 	}
 }
