@@ -19,5 +19,7 @@ class Phone {
 	//发短信
 	public void sendMessage() {
 		System.out.println("群发短信");
+		System.out.println("输出当前方法class:"+this.sendMessage().class);
 	}
+	
 }
