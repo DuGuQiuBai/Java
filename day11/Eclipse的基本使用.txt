@@ -1,61 +1,61 @@
-1:»ù±¾Ê¹ÓÃ
-	A:Ñ¡ÔñÒ»¸ö¹¤×÷¿Õ¼ä
+1:åŸºæœ¬ä½¿ç”¨
+	A:é€‰æ‹©ä¸€ä¸ªå·¥ä½œç©ºé—´
 		D:\develop\eclipse-SDK-3.7.2-win64\workspace
-	B:ÈçºÎĞ´Ò»¸öHelloWorld°¸Àı(´úÂëÒÔÏîÄ¿Îª»ù±¾µ¥Î»)
-		a:´´½¨ÏîÄ¿(¹¤³Ì)
+	B:å¦‚ä½•å†™ä¸€ä¸ªHelloWorldæ¡ˆä¾‹(ä»£ç ä»¥é¡¹ç›®ä¸ºåŸºæœ¬å•ä½)
+		a:åˆ›å»ºé¡¹ç›®(å·¥ç¨‹)
 			*File -- New -- Java Project
-			*ÔÚ×ó±ß¿Õ°×´¦£¬Ö±½ÓÓÒ¼ü -- New -- Java Project
+			*åœ¨å·¦è¾¹ç©ºç™½å¤„ï¼Œç›´æ¥å³é”® -- New -- Java Project
 
-			¼üÈëÏîÄ¿Ãû³ÆºóÖ±½ÓFinish¡£
-		b:ËùÓĞµÄjavaÎÄ¼ş±ØĞëĞ´µ½srcÏÂÃæ²ÅÓĞĞ§
-		c:´´½¨Ò»¸ö°ü
+			é”®å…¥é¡¹ç›®åç§°åç›´æ¥Finishã€‚
+		b:æ‰€æœ‰çš„javaæ–‡ä»¶å¿…é¡»å†™åˆ°srcä¸‹é¢æ‰æœ‰æ•ˆ
+		c:åˆ›å»ºä¸€ä¸ªåŒ…
 			cn.itcast   
-		d:ÔÚ°üÏÂ´´½¨Ò»¸öÀà
+		d:åœ¨åŒ…ä¸‹åˆ›å»ºä¸€ä¸ªç±»
 			HelloWorld
 
-			Í¬Ê±ÈÃËü°ïÎÒÃÇĞ´ºÃÁËmain·½·¨¡£
-		e:ÔÚmain·½·¨ÖĞĞ´ÄÚÈİ¼´¿É
-		f:±àÒë³ÌĞò
-			×Ô¶¯±àÒë£¬ÔÚ±£´æµÄÄÇÒ»¿Ì°ïÄã×öºÃÁË
-		g:ÔËĞĞ³ÌĞò
-			Ñ¡ÔñÒªÔËĞĞµÄÎÄ¼ş»òÕßÔÚÒªÔËĞĞµÄÎÄ¼şÄÚÈİÖĞ
-			ÓÒ¼ü -- Run as - Java Application¼´¿É
-		h:ÄÚÈİÏÔÊ¾
-			ÔÚConsole¿ØÖÆÌ¨ÏÔÊ¾ÄÚÈİ
+			åŒæ—¶è®©å®ƒå¸®æˆ‘ä»¬å†™å¥½äº†mainæ–¹æ³•ã€‚
+		e:åœ¨mainæ–¹æ³•ä¸­å†™å†…å®¹å³å¯
+		f:ç¼–è¯‘ç¨‹åº
+			è‡ªåŠ¨ç¼–è¯‘ï¼Œåœ¨ä¿å­˜çš„é‚£ä¸€åˆ»å¸®ä½ åšå¥½äº†
+		g:è¿è¡Œç¨‹åº
+			é€‰æ‹©è¦è¿è¡Œçš„æ–‡ä»¶æˆ–è€…åœ¨è¦è¿è¡Œçš„æ–‡ä»¶å†…å®¹ä¸­
+			å³é”® -- Run as - Java Applicationå³å¯
+		h:å†…å®¹æ˜¾ç¤º
+			åœ¨Consoleæ§åˆ¶å°æ˜¾ç¤ºå†…å®¹
 
-2:EclipseµÄ»ù±¾ÉèÖÃ
-	A:³ÌĞòµÄ±àÒëºÍÔËĞĞµÄ»·¾³ÅäÖÃ(Èç¹ûÄãµÄEclipseÆô¶¯Ã»ÓĞÎÊÌâ£¬¾Í²»ÒªÅäÖÃÁË)
-	B:È¥µôÄ¬ÈÏ×¢ÊÍ(¿ÉÒÔ²»ÓÃ¸Ä)
-	C:ĞĞºÅµÄÏÔÊ¾ºÍÒş²Ø
-		ÏÔÊ¾£ºÔÚ´úÂëÇøÓòµÄ×î×ó±ßµÄ¿Õ°×ÇøÓò£¬ÓÒ¼ü -- Show Line Numbers¼´¿É¡£
-		Òş²Ø£º°ÑÉÏÃæµÄ¶¯×÷ÔÙ×öÒ»´Î¡£
-	D:×ÖÌå´óĞ¡¼°ÑÕÉ«
-		a:Java´úÂëÇøÓòµÄ×ÖÌå´óĞ¡ºÍÑÕÉ«£º
-			window -- Preferences -- General -- Appearance -- Colors And Fonts -- JavaĞŞ¸Ä -- Java Edit Text Font
-		b:¿ØÖÆÌ¨
+2:Eclipseçš„åŸºæœ¬è®¾ç½®
+	A:ç¨‹åºçš„ç¼–è¯‘å’Œè¿è¡Œçš„ç¯å¢ƒé…ç½®(å¦‚æœä½ çš„Eclipseå¯åŠ¨æ²¡æœ‰é—®é¢˜ï¼Œå°±ä¸è¦é…ç½®äº†)
+	B:å»æ‰é»˜è®¤æ³¨é‡Š(å¯ä»¥ä¸ç”¨æ”¹)
+	C:è¡Œå·çš„æ˜¾ç¤ºå’Œéšè—
+		æ˜¾ç¤ºï¼šåœ¨ä»£ç åŒºåŸŸçš„æœ€å·¦è¾¹çš„ç©ºç™½åŒºåŸŸï¼Œå³é”® -- Show Line Numberså³å¯ã€‚
+		éšè—ï¼šæŠŠä¸Šé¢çš„åŠ¨ä½œå†åšä¸€æ¬¡ã€‚
+	D:å­—ä½“å¤§å°åŠé¢œè‰²
+		a:Javaä»£ç åŒºåŸŸçš„å­—ä½“å¤§å°å’Œé¢œè‰²ï¼š
+			window -- Preferences -- General -- Appearance -- Colors And Fonts -- Javaä¿®æ”¹ -- Java Edit Text Font
+		b:æ§åˆ¶å°
 			window -- Preferences -- General -- Appearance -- Colors And Fonts -- Debug -- Console font
-		c:ÆäËûÎÄ¼ş
+		c:å…¶ä»–æ–‡ä»¶
 			window -- Preferences -- General -- Appearance -- Colors And Fonts -- Basic -- Text Font
-	E:´°Ìå¸øÅªÂÒÁË£¬ÔõÃ´°ì
+	E:çª—ä½“ç»™å¼„ä¹±äº†ï¼Œæ€ä¹ˆåŠ
 		window -- Reset Perspective
-	F:¿ØÖÆÌ¨ÕÒ²»µ½ÁË
-		Window--Show View¡ªConsole
+	F:æ§åˆ¶å°æ‰¾ä¸åˆ°äº†
+		Window--Show Viewâ€”Console
 
-3:¿ì½İ¼üµÄÊ¹ÓÃ
-	A:ÄÚÈİ¸¨Öú¼ü
-		Alt+/ ÆğÌáÊ¾×÷ÓÃ
-		main+alt+/,syso+alt+/,¸ø³öÆäËûÌáÊ¾
-	B:¿ì½İ¼ü
-		¸ñÊ½»¯  ctrl+shift+f
-		µ¼Èë°ü  ctrl+shift+o
-		×¢ÊÍ	ctrl+/
+3:å¿«æ·é”®çš„ä½¿ç”¨
+	A:å†…å®¹è¾…åŠ©é”®
+		Alt+/ èµ·æç¤ºä½œç”¨
+		main+alt+/,syso+alt+/,ç»™å‡ºå…¶ä»–æç¤º
+	B:å¿«æ·é”®
+		æ ¼å¼åŒ–  ctrl+shift+f
+		å¯¼å…¥åŒ…  ctrl+shift+o
+		æ³¨é‡Š	ctrl+/
 			ctrl+shift+/,ctrl+shift+\
-		´úÂëÉÏÏÂÒÆ¶¯ Ñ¡ÖĞ´úÂëalt+ÉÏ/ÏÂ¼ıÍ·
-		²é¿´Ô´Âë  Ñ¡ÖĞÀàÃû(F3»òÕßCtrl+Êó±êµã»÷)
+		ä»£ç ä¸Šä¸‹ç§»åŠ¨ é€‰ä¸­ä»£ç alt+ä¸Š/ä¸‹ç®­å¤´
+		æŸ¥çœ‹æºç   é€‰ä¸­ç±»å(F3æˆ–è€…Ctrl+é¼ æ ‡ç‚¹å‡»)
 
-4:EclipseÖĞÈçºÎÌá¸ß¿ª·¢Ğ§ÂÊ
-	A:×Ô¶¯Éú³É¹¹Ôì·½·¨
-		a:ÎŞ²Î¹¹Ôì·½·¨ ÔÚ´úÂëÇøÓòÓÒ¼ü--source--Generate Constructors from Superclass
-		b:´ø²Î¹¹Ôì·½·¨ ÔÚ´úÂëÇøÓòÓÒ¼ü--source--Generate Constructors using fields.. -- finish
-	B:×Ô¶¯Éú³Éget/set·½·¨
-		ÔÚ´úÂëÇøÓòÓÒ¼ü--source--Generate Getters and Setters...
+4:Eclipseä¸­å¦‚ä½•æé«˜å¼€å‘æ•ˆç‡
+	A:è‡ªåŠ¨ç”Ÿæˆæ„é€ æ–¹æ³•
+		a:æ— å‚æ„é€ æ–¹æ³• åœ¨ä»£ç åŒºåŸŸå³é”®--source--Generate Constructors from Superclass
+		b:å¸¦å‚æ„é€ æ–¹æ³• åœ¨ä»£ç åŒºåŸŸå³é”®--source--Generate Constructors using fields.. -- finish
+	B:è‡ªåŠ¨ç”Ÿæˆgetter/setteræ–¹æ³•
+		åœ¨ä»£ç åŒºåŸŸå³é”®--source--Generate Getters and Setters...
