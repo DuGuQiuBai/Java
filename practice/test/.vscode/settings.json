@@ -1,4 +1,5 @@
 {
+    "java.jdt.ls.java.home": "D:\\project\\java\\JDK17",
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
