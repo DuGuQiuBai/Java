@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch reward",
+            "request": "launch",
+            "mainClass": "day03.reward",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch season",
+            "request": "launch",
+            "mainClass": "day03.season",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch week",
             "request": "launch",
             "mainClass": "day03.week",
