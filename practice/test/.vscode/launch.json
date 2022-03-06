@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch getmax",
+            "request": "launch",
+            "mainClass": "day04.getmax",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrdemo",
+            "request": "launch",
+            "mainClass": "day04.arrdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch randomdemo",
+            "request": "launch",
+            "mainClass": "day04.randomdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch continue1",
+            "request": "launch",
+            "mainClass": "day04.continue1",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch and",
             "request": "launch",
             "mainClass": "day03.and",
