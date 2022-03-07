@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch arrcheck",
+            "request": "launch",
+            "mainClass": "day05.arrcheck",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch arrtoarr",
             "request": "launch",
             "mainClass": "day05.arrtoarr",
