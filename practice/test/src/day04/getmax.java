@@ -8,6 +8,7 @@ public class getmax {
         System.out.print("请输入第二个数：");
         int b = sc.nextInt();
         getmax0(a, b);
+        sc.close();
     }
     public static void getmax0(int a, int b) {
         int c = a > b ? a : b;
