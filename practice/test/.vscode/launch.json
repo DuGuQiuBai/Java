@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch arrtoarr",
+            "request": "launch",
+            "mainClass": "day05.arrtoarr",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch rabbit",
+            "request": "launch",
+            "mainClass": "day05.rabbit",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch sevenpast",
             "request": "launch",
             "mainClass": "day05.sevenpast",
