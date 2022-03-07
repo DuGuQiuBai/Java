@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch sevenpast",
+            "request": "launch",
+            "mainClass": "day05.sevenpast",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch workout",
+            "request": "launch",
+            "mainClass": "day05.workout",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch reload",
+            "request": "launch",
+            "mainClass": "day05.reload",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch getmax",
             "request": "launch",
             "mainClass": "day05.getmax",
