@@ -8,6 +8,20 @@
             "type": "java",
             "name": "Launch getmax",
             "request": "launch",
+            "mainClass": "day05.getmax",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch returndemo",
+            "request": "launch",
+            "mainClass": "day05.returndemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch getmax",
+            "request": "launch",
             "mainClass": "day04.getmax",
             "projectName": "test_a0501e95"
         },
