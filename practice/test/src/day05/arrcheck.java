@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class arrcheck {
     public static void main(String[] args) {
-        int[] arr = {12, 54, 65, 23, 99, 10};
+        int[] arr = {12, 54, 65, 23, 99, 99};
         Scanner sc = new Scanner(System.in);
         System.out.print("请输入要查找的数据：");
         int number = sc.nextInt();
@@ -13,7 +13,12 @@ public class arrcheck {
         if (i == -1) {
             System.out.println("数组内没有此数据");
         } else {
-            System.out.println(number + "在数组arr内的索引值为：" + i);
+            System.out.print(number + "在数组arr内的索引值为：" + i);
+            for (int j = i+1; j < arr.length; j++) {
+                if (number == arr[j]) {
+                    System.out.print(", " + j);
+                }
+            }
         }
         sc.close();
     }

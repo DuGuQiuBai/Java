@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch studentdemo",
+            "request": "launch",
+            "mainClass": "day06.studentdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch phonedemo",
+            "request": "launch",
+            "mainClass": "day06.phonedemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch judge",
+            "request": "launch",
+            "mainClass": "day06.judge",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrupdown",
+            "request": "launch",
+            "mainClass": "day06.arrupdown",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch arrcheck",
             "request": "launch",
             "mainClass": "day05.arrcheck",
