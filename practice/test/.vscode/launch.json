@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch manager",
+            "request": "launch",
+            "mainClass": "StudentManager.manager",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch studentdemo",
+            "request": "launch",
+            "mainClass": "day07.studentdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch studentdemo",
             "request": "launch",
             "mainClass": "day06.studentdemo",
