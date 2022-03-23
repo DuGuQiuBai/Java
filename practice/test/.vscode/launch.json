@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch sort",
+            "request": "launch",
+            "mainClass": "problems.sort",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch quanpailie",
+            "request": "launch",
+            "mainClass": "problems.quanpailie",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch test1",
+            "request": "launch",
+            "mainClass": "StudentManager.test1",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch manager",
             "request": "launch",
             "mainClass": "StudentManager.manager",
