@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch add",
+            "request": "launch",
+            "mainClass": "day08.add",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch traverse_string",
+            "request": "launch",
+            "mainClass": "day08.traverse_string",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch sort",
             "request": "launch",
             "mainClass": "problems.sort",

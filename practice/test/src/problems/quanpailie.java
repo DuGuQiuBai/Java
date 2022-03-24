@@ -1,5 +1,6 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class quanpailie {
@@ -7,6 +8,8 @@ public class quanpailie {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.close();
+        //ArrayList<int> arr = new ArrayList<int>();
+
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 1;
