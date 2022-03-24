@@ -3,10 +3,12 @@ package StudentManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class manager {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         ArrayList<Student> array = new ArrayList<Student>();
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("------Welcome to the StudentManager System------");
             System.out.println("1 Add Students");
@@ -40,19 +42,19 @@ public class manager {
             }
         }
     }
-
+    
     // 添加学生
     public static void addStudent(ArrayList<Student> array) {
-        Scanner sc1 = new Scanner(System.in);
+        //Scanner sc1 = new Scanner(System.in);
 
-        System.out.print("Please insert id:");
-        String sid = sc1.nextLine();
-        System.out.print("Please insert name:");
-        String name = sc1.nextLine();
-        System.out.print("Please insert age:");
-        String age = sc1.nextLine();
-        System.out.print("Please insert address:");
-        String address = sc1.nextLine();
+        System.out.print("Please input id:");
+        String sid = sc.nextLine();
+        System.out.print("Please input name:");
+        String name = sc.nextLine();
+        System.out.print("Please input age:");
+        String age = sc.nextLine();
+        System.out.print("Please input address:");
+        String address = sc.nextLine();
 
         // 创建学生对象，把键盘录入的数据赋值给学生对象的成员变量
         Student s = new Student();
@@ -64,6 +66,5 @@ public class manager {
         // 添加学生到集合里
         array.add(s);
         System.out.println("Add Succeed!");
-        sc1.close();
     }
 }
