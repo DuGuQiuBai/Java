@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PersonDemo",
+            "request": "launch",
+            "mainClass": "day10.PlayerAndCoach.PersonDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnimalDemo",
+            "request": "launch",
+            "mainClass": "day10.AnimalDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch HumanDemo",
             "request": "launch",
             "mainClass": "day09.HumanDemo",
