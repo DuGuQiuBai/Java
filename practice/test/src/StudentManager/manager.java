@@ -6,16 +6,11 @@ import java.util.Scanner;
 public class manager {
     static Scanner sc = new Scanner(System.in);
 
-    public void close() {
-        sc.close();
-    }
-
     public static void main(String[] args) {
         ArrayList<Student> array = new ArrayList<Student>();
         // Scanner sc = new Scanner(System.in);
         while (true) {
             PrintTable();
-
             switch (sc.nextLine()) {
                 case "1":
                     AddStudent(array);
@@ -25,7 +20,7 @@ public class manager {
                     ;
                     break;
                 case "3":
-                    System.out.println("Change Info");
+                    ChangeInfo(array);
                     break;
                 case "4":
                     CheckAll(array);
@@ -41,6 +36,7 @@ public class manager {
         }
 
     }
+
     // 打印表头
     public static void PrintTable() {
         System.out.println("------Welcome to the StudentManager System------");
@@ -54,10 +50,19 @@ public class manager {
 
     // 添加学生
     public static void AddStudent(ArrayList<Student> array) {
-        // Scanner sc1 = new Scanner(System.in);
+        String sid;
 
-        System.out.print("Please input id:");
-        String sid = sc.nextLine();
+        //判断学号是否存在
+        while (true) {
+            System.out.print("Please input id:");
+            sid = sc.nextLine();
+            if (CheckID(array, sid)) {
+                System.out.println("ID already exists, please input agian!");
+            } else {
+                break;
+            }
+        }
+        
         System.out.print("Please input name:");
         String name = sc.nextLine();
         System.out.print("Please input age:");
@@ -82,14 +87,64 @@ public class manager {
         System.out.print("Please input student's id:");
         String sid = sc.nextLine();
 
+        int index = -1;
+        // 判断学号是否存在
         for (int i = 0; i < array.size(); i++) {
             Student s = array.get(i);
             if (s.getSid().equals(sid)) {
-                array.remove(i);
+                index = i;
                 break;
             }
         }
-        System.out.println("Delete Succeed!");
+
+        if (index == -1) {
+            System.out.println("ID doesn't exist! PLease input again.");
+        } else {
+            array.remove(index);
+            System.out.println("Delete Succeed!");
+        }
+    }
+
+    // 修改学生信息
+    public static void ChangeInfo(ArrayList<Student> array) {
+        System.out.print("PLease input student's ID:");
+        String sid = sc.nextLine();
+
+        int index = -1;
+
+        for (int i = 0; i < array.size(); i++) {
+            Student student = array.get(i);
+            if (student.getSid().equals(sid)) {
+                index = i;
+            }
+        }
+
+        if (index == -1) {
+            System.out.println("ID doesn't exist! Please input agian.");
+            return;
+        }
+
+        System.out.print("Please input name:");
+        String name = sc.nextLine();
+        System.out.print("Please input age:");
+        String age = sc.nextLine();
+        System.out.print("Please input address:");
+        String addr = sc.nextLine();
+
+        Student s = new Student();
+        s.setSid(sid);
+        s.setName(name);
+        s.setAge(age);
+        s.setAddress(addr);
+
+        for (int i = 0; i < array.size(); i++) {
+            Student change = array.get(i);
+            if (change.getSid().equals(sid)) {
+                array.set(i, s);
+                break;
+            }
+        }
+        System.out.println("Change succeed!");
     }
 
     // 查看学生
@@ -100,10 +155,22 @@ public class manager {
         }
 
         // 表头信息
-        System.out.println("id\t\tname\t\tage\taddress");
+        System.out.println("id\t\tname\tage\taddress");
         for (int i = 0; i < array.size(); i++) {
             Student s = array.get(i);
-            System.out.println(s.getSid() + "\t\t" + s.getName() + "\t\t" + s.getAge() + "岁\t" + s.getAddress());
+            System.out.println(s.getSid() + "\t\t" + s.getName() + "\t" + s.getAge() + "岁\t" + s.getAddress());
         }
     }
+
+    // 查看学号是否相同
+    public static boolean CheckID(ArrayList<Student> array, String ID) {
+        for (int i = 0; i < array.size(); i++) {
+            Student s = array.get(i);
+            if (s.getSid().equals(ID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
