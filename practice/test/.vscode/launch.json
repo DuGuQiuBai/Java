@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch maopao",
+            "request": "launch",
+            "mainClass": "day10.maopao",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComputerTest",
+            "request": "launch",
+            "mainClass": "day10.ComputerTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch testdemo",
+            "request": "launch",
+            "mainClass": "day10.OuterInner.testdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch PersonDemo",
             "request": "launch",
             "mainClass": "day10.PlayerAndCoach.PersonDemo",
