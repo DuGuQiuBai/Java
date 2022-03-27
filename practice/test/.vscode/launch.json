@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ComponentTest",
+            "request": "launch",
+            "mainClass": "day11.Component.ComponentTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExceptionDemo",
+            "request": "launch",
+            "mainClass": "day11.Exception.ExceptionDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch Trycatch",
+            "request": "launch",
+            "mainClass": "day11.Trycatch",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch GetFeb",
+            "request": "launch",
+            "mainClass": "day11.GetFeb",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch DateDemo",
+            "request": "launch",
+            "mainClass": "day11.DateDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntegerTest",
+            "request": "launch",
+            "mainClass": "day11.IntegerTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch maopao",
             "request": "launch",
             "mainClass": "day10.maopao",
