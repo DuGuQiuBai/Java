@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PanelTest",
+            "request": "launch",
+            "mainClass": "day11.Component.PanelTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch ComponentTest",
             "request": "launch",
             "mainClass": "day11.Component.ComponentTest",
