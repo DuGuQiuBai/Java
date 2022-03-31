@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CetDemo",
+            "request": "launch",
+            "mainClass": "day12.CetDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListDemo",
+            "request": "launch",
+            "mainClass": "day12.Student.ListDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch CollectionDemo",
+            "request": "launch",
+            "mainClass": "day12.Student.CollectionDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
             "name": "Launch PanelTest",
             "request": "launch",
             "mainClass": "day11.Component.PanelTest",
