@@ -1,0 +1,371 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch CetDemo",
+            "request": "launch",
+            "mainClass": "day12.CetDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListDemo",
+            "request": "launch",
+            "mainClass": "day12.Student.ListDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch CollectionDemo",
+            "request": "launch",
+            "mainClass": "day12.Student.CollectionDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch PanelTest",
+            "request": "launch",
+            "mainClass": "day11.Component.PanelTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComponentTest",
+            "request": "launch",
+            "mainClass": "day11.Component.ComponentTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExceptionDemo",
+            "request": "launch",
+            "mainClass": "day11.Exception.ExceptionDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch Trycatch",
+            "request": "launch",
+            "mainClass": "day11.Trycatch",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch GetFeb",
+            "request": "launch",
+            "mainClass": "day11.GetFeb",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch DateDemo",
+            "request": "launch",
+            "mainClass": "day11.DateDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntegerTest",
+            "request": "launch",
+            "mainClass": "day11.IntegerTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch maopao",
+            "request": "launch",
+            "mainClass": "day10.maopao",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComputerTest",
+            "request": "launch",
+            "mainClass": "day10.ComputerTest",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch testdemo",
+            "request": "launch",
+            "mainClass": "day10.OuterInner.testdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch PersonDemo",
+            "request": "launch",
+            "mainClass": "day10.PlayerAndCoach.PersonDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnimalDemo",
+            "request": "launch",
+            "mainClass": "day10.AnimalDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch HumanDemo",
+            "request": "launch",
+            "mainClass": "day09.HumanDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch PhoneDemo",
+            "request": "launch",
+            "mainClass": "day09.PhoneDemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch student02",
+            "request": "launch",
+            "mainClass": "day08.student02",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch add",
+            "request": "launch",
+            "mainClass": "day08.add",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch traverse_string",
+            "request": "launch",
+            "mainClass": "day08.traverse_string",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch sort",
+            "request": "launch",
+            "mainClass": "problems.sort",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch quanpailie",
+            "request": "launch",
+            "mainClass": "problems.quanpailie",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch test1",
+            "request": "launch",
+            "mainClass": "StudentManager.test1",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch manager",
+            "request": "launch",
+            "mainClass": "StudentManager.manager",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch studentdemo",
+            "request": "launch",
+            "mainClass": "day07.studentdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch studentdemo",
+            "request": "launch",
+            "mainClass": "day06.studentdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch phonedemo",
+            "request": "launch",
+            "mainClass": "day06.phonedemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch judge",
+            "request": "launch",
+            "mainClass": "day06.judge",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrupdown",
+            "request": "launch",
+            "mainClass": "day06.arrupdown",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrcheck",
+            "request": "launch",
+            "mainClass": "day05.arrcheck",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrtoarr",
+            "request": "launch",
+            "mainClass": "day05.arrtoarr",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch rabbit",
+            "request": "launch",
+            "mainClass": "day05.rabbit",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch sevenpast",
+            "request": "launch",
+            "mainClass": "day05.sevenpast",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch workout",
+            "request": "launch",
+            "mainClass": "day05.workout",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch reload",
+            "request": "launch",
+            "mainClass": "day05.reload",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch getmax",
+            "request": "launch",
+            "mainClass": "day05.getmax",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch returndemo",
+            "request": "launch",
+            "mainClass": "day05.returndemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch getmax",
+            "request": "launch",
+            "mainClass": "day04.getmax",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch arrdemo",
+            "request": "launch",
+            "mainClass": "day04.arrdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch randomdemo",
+            "request": "launch",
+            "mainClass": "day04.randomdemo",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch continue1",
+            "request": "launch",
+            "mainClass": "day04.continue1",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch and",
+            "request": "launch",
+            "mainClass": "day03.and",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch reward",
+            "request": "launch",
+            "mainClass": "day03.reward",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch season",
+            "request": "launch",
+            "mainClass": "day03.season",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch week",
+            "request": "launch",
+            "mainClass": "day03.week",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch day03",
+            "request": "launch",
+            "mainClass": "day03.day03",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch day03",
+            "request": "launch",
+            "mainClass": "day03",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch day02",
+            "request": "launch",
+            "mainClass": "day02",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch day01",
+            "request": "launch",
+            "mainClass": "day01",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "test_a0501e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "test_a0501e95"
+        }
+    ]
+}

@@ -1,39 +1,39 @@
 /*
-	±êÊ¶·û£º¾ÍÊÇ¸øÀà,½Ó¿Ú,·½·¨,±äÁ¿µÈÆðÃû×ÖÊ±Ê¹ÓÃµÄ×Ö·ûÐòÁÐ(×Ö·û´®)
+	æ ‡è¯†ç¬¦ï¼šå°±æ˜¯ç»™ç±»,æŽ¥å£,æ–¹æ³•,å˜é‡ç­‰èµ·åå­—æ—¶ä½¿ç”¨çš„å­—ç¬¦åºåˆ—(å­—ç¬¦ä¸²)
 
-	×é³É¹æÔò£º
-		A:Ó¢ÎÄ×ÖÄ¸´óÐ¡Ð´
-		B:Êý×Ö
-		C:_ºÍ$
+	ç»„æˆè§„åˆ™ï¼š
+		A:è‹±æ–‡å­—æ¯å¤§å°å†™
+		B:æ•°å­—
+		C:_å’Œ$
 
-	×¢ÒâÊÂÏî£º
-		A:²»ÄÜÒÔÊý×Ö¿ªÍ·
-		B:²»ÄÜÊÇJavaÖÐµÄ¹Ø¼ü×Ö
-		C:Çø·Ö´óÐ¡Ð´
-			Student,student ÕâÊÇÁ½¸öÃû³Æ
+	æ³¨æ„äº‹é¡¹ï¼š
+		A:ä¸èƒ½ä»¥æ•°å­—å¼€å¤´
+		B:ä¸èƒ½æ˜¯Javaä¸­çš„å…³é”®å­—
+		C:åŒºåˆ†å¤§å°å†™
+			Student,student è¿™æ˜¯ä¸¤ä¸ªåç§°
 
-	³£¼ûµÄÃüÃû¹æÔò£º¼ûÃûÖªÒâ
-		A:°ü ÆäÊµ¾ÍÊÇÎÄ¼þ¼Ð,ÓÃÓÚ½â¾öÏàÍ¬ÀàÃûÎÊÌâ
-			È«²¿Ð¡Ð´
-			µ¥¼¶£ºcom
-			¶à¼¶£ºcn.itcast
+	å¸¸è§çš„å‘½åè§„åˆ™ï¼šè§åçŸ¥æ„
+		A:åŒ… å…¶å®žå°±æ˜¯æ–‡ä»¶å¤¹,ç”¨äºŽè§£å†³ç›¸åŒç±»åé—®é¢˜
+			å…¨éƒ¨å°å†™
+			å•çº§ï¼šcom
+			å¤šçº§ï¼šcn.itcast
 
-		B:Àà»òÕß½Ó¿Ú
-			Ò»¸öµ¥´Ê£ºÊ××ÖÄ¸´óÐ´
+		B:ç±»æˆ–è€…æŽ¥å£
+			ä¸€ä¸ªå•è¯ï¼šé¦–å­—æ¯å¤§å†™
 				Student,Person,Teacher
-			¶à¸öµ¥´Ê£ºÃ¿¸öµ¥´ÊµÄÊ××ÖÄ¸´óÐ´
+			å¤šä¸ªå•è¯ï¼šæ¯ä¸ªå•è¯çš„é¦–å­—æ¯å¤§å†™
 				HelloWorld,MyName,NameDemo
 
-		C:·½·¨»òÕß±äÁ¿
-			Ò»¸öµ¥´Ê£ºÈ«²¿Ð¡Ð´
+		C:æ–¹æ³•æˆ–è€…å˜é‡
+			ä¸€ä¸ªå•è¯ï¼šå…¨éƒ¨å°å†™
 				name,age,show()
-			¶à¸öµ¥´Ê£º´ÓµÚ¶þ¸öµ¥´Ê¿ªÊ¼£¬Ã¿¸öµ¥´ÊÊ××ÖÄ¸´óÐ´
+			å¤šä¸ªå•è¯ï¼šä»Žç¬¬äºŒä¸ªå•è¯å¼€å§‹ï¼Œæ¯ä¸ªå•è¯é¦–å­—æ¯å¤§å†™
 				myName,showAllStudentNames()
 
-		D:³£Á¿
-			Ò»¸öµ¥´Ê£ºÈ«²¿´óÐ´
+		D:å¸¸é‡
+			ä¸€ä¸ªå•è¯ï¼šå…¨éƒ¨å¤§å†™
 				AGE
-			¶à¸öµ¥´Ê£ºÃ¿¸öµ¥´Ê¶¼´óÐ´£¬ÓÃ_Á¬½Ó
+			å¤šä¸ªå•è¯ï¼šæ¯ä¸ªå•è¯éƒ½å¤§å†™ï¼Œç”¨_è¿žæŽ¥
 				STUDENT_MAX_AGE
 */
 class NameDemo {
