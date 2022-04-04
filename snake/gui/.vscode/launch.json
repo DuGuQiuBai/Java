@@ -1,0 +1,63 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Calc",
+            "request": "launch",
+            "mainClass": "GUI.MyCalc.Calc",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch CalcTest",
+            "request": "launch",
+            "mainClass": "GUI.calc.CalcTest",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Text1",
+            "request": "launch",
+            "mainClass": "GUI.text.Text1",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Text1",
+            "request": "launch",
+            "mainClass": "GUI.Text1",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExTest",
+            "request": "launch",
+            "mainClass": "GUI.ExTest",
+            "projectName": "gui_9bc7051b"
+        },
+        {
+            "type": "java",
+            "name": "Launch first",
+            "request": "launch",
+            "mainClass": "GUI.first",
+            "projectName": "gui_9bc7051b"
+        }
+    ]
+}
