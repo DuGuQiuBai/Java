@@ -1,3 +1,0 @@
-adminadmin=adminadmin
-woaigame=woaigame
-LoveJava=123456
