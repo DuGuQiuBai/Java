@@ -1,84 +1,188 @@
-1£ºĞÎÊ½²ÎÊıºÍ·µ»ØÖµÎÊÌâ(ÕÆÎÕ)
-	(1)ĞÎÊ½²ÎÊı£º
-		»ù±¾ÀàĞÍ£ºĞèÒªµÄÊÇ¶ÔÓ¦µÄÖµ
-		ÒıÓÃÀàĞÍ£º
-			Àà£º¸ÃÀàµÄ¶ÔÏó
-			³éÏóÀà£º¸ÃÀàµÄ×ÓÀà¶ÔÏó
-			½Ó¿Ú£º¸Ã½Ó¿ÚµÄÊµÏÖÀà¶ÔÏó
-	(2)·µ»ØÖµÎÊÌâ£º
-		»ù±¾ÀàĞÍ£º·µ»ØµÄÊÇ¶ÔÓ¦µÄÖµ
-		ÒıÓÃÀàĞÍ£º
-			Àà£º¸ÃÀàµÄ¶ÔÏó
-			³éÏóÀà£º¸ÃÀàµÄ×ÓÀà¶ÔÏó
-			½Ó¿Ú£º¸Ã½Ó¿ÚµÄÊµÏÖÀà¶ÔÏó
-	(3)Á´Ê½±à³Ì
+1ï¼šå½¢å¼å‚æ•°å’Œè¿”å›å€¼é—®é¢˜(æŒæ¡)
+	(1)å½¢å¼å‚æ•°ï¼š
+		åŸºæœ¬ç±»å‹ï¼šéœ€è¦çš„æ˜¯å¯¹åº”çš„å€¼
+		å¼•ç”¨ç±»å‹ï¼š
+			ç±»ï¼šè¯¥ç±»çš„å¯¹è±¡
+			æŠ½è±¡ç±»ï¼šè¯¥ç±»çš„å­ç±»å¯¹è±¡
+			æ¥å£ï¼šè¯¥æ¥å£çš„å®ç°ç±»å¯¹è±¡
+	(2)è¿”å›å€¼é—®é¢˜ï¼š
+		åŸºæœ¬ç±»å‹ï¼šè¿”å›çš„æ˜¯å¯¹åº”çš„å€¼
+		å¼•ç”¨ç±»å‹ï¼š
+			ç±»ï¼šè¯¥ç±»çš„å¯¹è±¡
+			æŠ½è±¡ç±»ï¼šè¯¥ç±»çš„å­ç±»å¯¹è±¡
+			æ¥å£ï¼šè¯¥æ¥å£çš„å®ç°ç±»å¯¹è±¡
+	(3)é“¾å¼ç¼–ç¨‹
 		new A().b().c().d();
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-2£º°ü(Àí½â)
-	(1)ÆäÊµ¾ÍÊÇÎÄ¼ş¼Ğ
-	(2)¶ÔÀà½øĞĞ·ÖÀà¹ÜÀí
-	(3)¸ñÊ½£º
-		package °üÃû;
-	(4)×¢ÒâÊÂÏî
-		A:packageÊÇ³ÌĞòÖĞµÄµÚÒ»Ìõ¿ÉÖ´ĞĞÓï¾ä
-		B:ÔÚÀàÖĞpackageÊÇÎ¨Ò»µÄ
-		C:Ã»ÓĞpackage£¬Ä¬ÈÏÊÇÎŞ°üÃû
-	(5)´ø°üµÄÀàµÄ±àÒëºÍÔËĞĞ
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
 
-3£ºµ¼°ü(Àí½â)
-	(1)ÎªÁË·½±ãÊ¹ÓÃ²»Í¬°üÏÂµÄÀà£¬ĞèÒªµ¼°ü
-	(2)¸ñÊ½£º
-		import °üÃû.±¨Ãû...ÀàÃû;
+interface ISubmission {
+    struct Haiku {
+        address author;
+        string line1;
+        string line2;
+        string line3;
+    }
 
-		×¢Òâ£º¿ÉÒÔµ¼Èëµ½*,µ«ÊÇ²»½¨Òé
-	(3)package£¬import£¬classÔÚÀàÖĞÓĞÃ»ÓĞË³Ğò¹ØÏµÄØ?
-		ÓĞ¡£
+    function mintHaiku(
+        string memory _line1,
+        string memory _line2,
+        string memory _line3
+    ) external;
+
+    // function ownerOf(uint256 _id) external view returns (address);
+
+    function counter() external view returns (uint256);
+
+    function shareHaiku(uint256 _id, address _to) external;
+
+    function getMySharedHaikus() external view returns (Haiku[] memory);
+}
+
+contract HaikuNFT is ERC721, ISubmission {
+    Haiku[] public haikus;
+    mapping(address => mapping(uint256 => bool)) public sharedHaikus;
+    uint256 public haikuCounter;
+
+    constructor() ERC721("HaikuNFT", "HAIKU") {
+        haikuCounter = 1;
+    }
+
+    string salt = "value";
+
+    function counter() external view override returns (uint256) {
+        return haikuCounter;
+    }
+
+    function mintHaiku(
+        string memory _line1,
+        string memory _line2,
+        string memory _line3
+    ) external override {
+        // Check if the haiku is unique
+        string[3] memory haikusStrings = [_line1, _line2, _line3];
+        for (uint256 li = 0; li < haikusStrings.length; li++) {
+            string memory newLine = haikusStrings[li];
+            // string memory newHaikuString = string(
+            //     abi.encodePacked(haikusStrings[li])
+            // );
+            for (uint256 i = 0; i < haikus.length; i++) {
+                Haiku memory existingHaiku = haikus[i];
+                string[3] memory existingHaikuStrings = [
+                    existingHaiku.line1,
+                    existingHaiku.line2,
+                    existingHaiku.line3
+                ];
+
+                for (uint256 eHsi = 0; eHsi < 3; eHsi++) {
+                    string memory existingHaikuString = existingHaikuStrings[
+                        eHsi
+                    ];
+                    if (
+                        keccak256(abi.encodePacked(existingHaikuString)) ==
+                        keccak256(abi.encodePacked(newLine))
+                    ) {
+                        revert HaikuNotUnique();
+                    }
+                }
+            }
+        }
+
+        // Mint the haiku NFT
+        _safeMint(msg.sender, haikuCounter);
+        haikus.push(Haiku(msg.sender, _line1, _line2, _line3));
+        haikuCounter++;
+    }
+
+    function shareHaiku(uint256 _id, address _to) external override {
+        require(_id > 0 && _id <= haikuCounter, "Invalid haiku ID");
+
+        Haiku memory haikuToShare = haikus[_id - 1];
+        require(haikuToShare.author == msg.sender, "NotYourHaiku");
+
+        sharedHaikus[_to][_id] = true;
+    }
+
+    function getMySharedHaikus()
+        external
+        view
+        override
+        returns (Haiku[] memory)
+    {
+        uint256 sharedHaikuCount;
+        for (uint256 i = 0; i < haikus.length; i++) {
+            if (sharedHaikus[msg.sender][i + 1]) {
+                sharedHaikuCount++;
+            }
+        }
+
+2ï¼šåŒ…(ç†è§£)
+	(1)å…¶å®å°±æ˜¯æ–‡ä»¶å¤¹
+	(2)å¯¹ç±»è¿›è¡Œåˆ†ç±»ç®¡ç†
+	(3)æ ¼å¼ï¼š
+		package åŒ…å;
+	(4)æ³¨æ„äº‹é¡¹
+		A:packageæ˜¯ç¨‹åºä¸­çš„ç¬¬ä¸€æ¡å¯æ‰§è¡Œè¯­å¥
+		B:åœ¨ç±»ä¸­packageæ˜¯å”¯ä¸€çš„
+		C:æ²¡æœ‰packageï¼Œé»˜è®¤æ˜¯æ— åŒ…å
+	(5)å¸¦åŒ…çš„ç±»çš„ç¼–è¯‘å’Œè¿è¡Œ
+
+3ï¼šå¯¼åŒ…(ç†è§£)
+	(1)ä¸ºäº†æ–¹ä¾¿ä½¿ç”¨ä¸åŒåŒ…ä¸‹çš„ç±»ï¼Œéœ€è¦å¯¼åŒ…
+	(2)æ ¼å¼ï¼š
+		import åŒ…å.æŠ¥å...ç±»å;
+
+		æ³¨æ„ï¼šå¯ä»¥å¯¼å…¥åˆ°*,ä½†æ˜¯ä¸å»ºè®®
+	(3)packageï¼Œimportï¼Œclassåœ¨ç±»ä¸­æœ‰æ²¡æœ‰é¡ºåºå…³ç³»å‘¢?
+		æœ‰ã€‚
 		package --> import --> class
 
-4£ºĞŞÊÎ·û(Àí½â)
-	(1)4ÖÖÈ¨ÏŞĞŞÊÎ·û
-				±¾Àà	Í¬Ò»¸ö°üÏÂ	²»Í¬°üÏÂµÄ×ÓÀà	²»Í¬°üÏÂµÄÆäËûÀà
+4ï¼šä¿®é¥°ç¬¦(ç†è§£)
+	(1)4ç§æƒé™ä¿®é¥°ç¬¦
+				æœ¬ç±»	åŒä¸€ä¸ªåŒ…ä¸‹	ä¸åŒåŒ…ä¸‹çš„å­ç±»	ä¸åŒåŒ…ä¸‹çš„å…¶ä»–ç±»
 		private		Y
-		Ä¬ÈÏ		Y	Y
+		é»˜è®¤		Y	Y
 		protected	Y	Y		Y
 		public		Y	Y		Y		Y
-	(2)³£¼ûµÄĞŞÊÎ
-		A:Àà	public
-		B:³ÉÔ±±äÁ¿	private
-		C:¹¹Ôì·½·¨	public
-		D:³ÉÔ±·½·¨	public
+	(2)å¸¸è§çš„ä¿®é¥°
+		A:ç±»	public
+		B:æˆå‘˜å˜é‡	private
+		C:æ„é€ æ–¹æ³•	public
+		D:æˆå‘˜æ–¹æ³•	public
 
-5£ºÄÚ²¿Àà(Àí½â)
-	(1)°ÑÀàA¶¨ÒåÔÚÀàBÄÚ²¿£¬ÀàA¾Í±»³ÆÎªÄÚ²¿Àà
-	(2)·ÃÎÊÌØµã£º
-		A:ÄÚ²¿Àà¿ÉÒÔÖ±½Ó·ÃÎÊÍâ²¿ÀàµÄ³ÉÔ±£¬°üÀ¨Ë½ÓĞ
-		B:Íâ²¿ÀàÒªÏë·ÃÎÊÄÚ²¿ÀàµÄ³ÉÔ±£¬±ØĞë´´½¨¶ÔÏó
-	(3)ÄÚ²¿ÀàµÄ·ÖÀà£º
-		A:³ÉÔ±ÄÚ²¿Àà
-		B:¾Ö²¿ÄÚ²¿Àà
-	(4)³ÉÔ±ÄÚ²¿Àà
+5ï¼šå†…éƒ¨ç±»(ç†è§£)
+	(1)æŠŠç±»Aå®šä¹‰åœ¨ç±»Bå†…éƒ¨ï¼Œç±»Aå°±è¢«ç§°ä¸ºå†…éƒ¨ç±»
+	(2)è®¿é—®ç‰¹ç‚¹ï¼š
+		A:å†…éƒ¨ç±»å¯ä»¥ç›´æ¥è®¿é—®å¤–éƒ¨ç±»çš„æˆå‘˜ï¼ŒåŒ…æ‹¬ç§æœ‰
+		B:å¤–éƒ¨ç±»è¦æƒ³è®¿é—®å†…éƒ¨ç±»çš„æˆå‘˜ï¼Œå¿…é¡»åˆ›å»ºå¯¹è±¡
+	(3)å†…éƒ¨ç±»çš„åˆ†ç±»ï¼š
+		A:æˆå‘˜å†…éƒ¨ç±»
+		B:å±€éƒ¨å†…éƒ¨ç±»
+	(4)æˆå‘˜å†…éƒ¨ç±»
 		A:private
 		B:static
 		
-		ÃæÊÔÌâ£º
+		é¢è¯•é¢˜ï¼š
 			num
 			this.num
 			Outer.this.num
-	(5)¾Ö²¿ÄÚ²¿Àà
-		A:ÃæÊÔÌâ
-			¾Ö²¿ÄÚ²¿Àà·ÃÎÊ¾Ö²¿±äÁ¿£¬±ØĞë¼ÓfinalĞŞÊÎ
-	(6)ÄäÃûÄÚ²¿Àà(ÕÆÎÕ)
-		A:Ã»ÓĞÃû×ÖµÄÄÚ²¿Àà
-		B:Ç°Ìá
-			´æÔÚÒ»¸öÀà»òÕß½Ó¿Ú
-		C:¸ñÊ½
-			new ÀàÃû»òÕß½Ó¿ÚÃû() {
-				ÖØĞ´·½·¨();
+	(5)å±€éƒ¨å†…éƒ¨ç±»
+		A:é¢è¯•é¢˜
+			å±€éƒ¨å†…éƒ¨ç±»è®¿é—®å±€éƒ¨å˜é‡ï¼Œå¿…é¡»åŠ finalä¿®é¥°
+	(6)åŒ¿åå†…éƒ¨ç±»(æŒæ¡)
+		A:æ²¡æœ‰åå­—çš„å†…éƒ¨ç±»
+		B:å‰æ
+			å­˜åœ¨ä¸€ä¸ªç±»æˆ–è€…æ¥å£
+		C:æ ¼å¼
+			new ç±»åæˆ–è€…æ¥å£å() {
+				é‡å†™æ–¹æ³•();
 			};
 
-			±¾ÖÊ£ºÊÇÒ»¸öÄäÃû×ÓÀà¶ÔÏó
-	(7)¿ª·¢ÖĞÈçºÎÊ¹ÓÃ
-		²»ÓÃÔÚ¶¨ÒåÒ»¸öĞÂµÄÀàÁË¡£Ö±½ÓÍ¨¹ıÄäÃûÄÚ²¿ÀàµÄ¸ñÊ½¾Í¿ÉÒÔ¸ã¶¨
+			æœ¬è´¨ï¼šæ˜¯ä¸€ä¸ªåŒ¿åå­ç±»å¯¹è±¡
+	(7)å¼€å‘ä¸­å¦‚ä½•ä½¿ç”¨
+		ä¸ç”¨åœ¨å®šä¹‰ä¸€ä¸ªæ–°çš„ç±»äº†ã€‚ç›´æ¥é€šè¿‡åŒ¿åå†…éƒ¨ç±»çš„æ ¼å¼å°±å¯ä»¥æå®š
 
 		interface Person {
 			public abstract void show();
@@ -94,15 +198,15 @@
 		pd.method(new Person(){
 			public void show(){...}
 		});
-	(8)ÃæÊÔÌâ
-		²¹Æë´úÂë£¬ÔÚ¿ØÖÆÌ¨Êä³öHelloWorld
+	(8)é¢è¯•é¢˜
+		è¡¥é½ä»£ç ï¼Œåœ¨æ§åˆ¶å°è¾“å‡ºHelloWorld
 
 		interface Inter {
 			public abstract void show();
 		}
 
 		class Outer {
-			//²¹Æë´úÂë
+			//è¡¥é½ä»£ç 
 			public static Inter method() {
 				return new Inter(){
 					public void show() {
